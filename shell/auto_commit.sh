@@ -1,4 +1,5 @@
 #!/bin/bash
+# 自动提交
 
 if [ ${1}="" ];then
     msg="add-one";
