@@ -2,7 +2,7 @@
 # 自动提交
 
 if [ ${1}="" ];then
-    msg="add-one";
+    msg="$(date +"%Y-%m-%d") add";
 else
     msg=${1}
 fi
