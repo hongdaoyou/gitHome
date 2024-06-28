@@ -8,8 +8,8 @@ else
     msg=${1}
 fi
 
-git add .  -v
+git add .
 
-git commit -m ${msg} -v
+git commit -m ${msg}
 
-git push -v
+git push
