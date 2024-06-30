@@ -34,9 +34,14 @@ class ChangeText {
 
         $str = file_get_contents($filePath);
 
-        $str = preg_replace("\n([\u4e00-\u9fa5])", "\n1 $1", $str);
+        // $str = preg_replace("\n([\u4e00-\u9fa5])", "\n1 $1", $str);
+        // $str = preg_replace("\n(    )", "\n    我的\n   $1", $str);
 
-        $str = preg_replace("\n(    )", "\n    我的\n   $1", $str);
+        // 在汉字前,添加 1 
+        $str = preg_replace("/\n([\x{4e00}-\x{9fa5}])/u", "\n1 $1", $str);
+
+        // 增加一行 我的
+        $str = preg_replace("/\n(    )/", "\n    我的\n    $1", $str);
 
         // echo $str;
 
