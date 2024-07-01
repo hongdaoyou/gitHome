@@ -8,6 +8,7 @@ else
     msg=${1}
 fi
 
+ 
 git add .
 
 git commit -m ${msg}
