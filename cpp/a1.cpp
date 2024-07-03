@@ -1,23 +1,21 @@
 #include <iostream>
 
-// #include <asio>
-
-#include <boost/asio.hpp>
-
-
 using namespace std;
 
-void fun() {
-    // obj = io_service()
-
-    // obj.input("a")
-
-    cout << "abc" <<endl;
-}
-
+// 调试类
+class Test {
+    public:
+        void fun(){
+        
+            cout << 1 << endl;
+        }
+    
+};
 
 int main() {
-
-    fun();
+	
+	// 调试
+    Test test;
+    test.fun();
 
 }

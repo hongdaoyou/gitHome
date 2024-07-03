@@ -18,7 +18,6 @@ fi
 # 注释
 if [ ${1}="" ];then
     msg=$(date +"%Y-%m-%d")"-${timeMsg}-add";
-
 else
     msg=${1}
 fi
