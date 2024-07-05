@@ -5,13 +5,14 @@ import (
 
 )
 
-func main() {
+func fun() {
 
+	fmt.Println("")
+}
+
+func main() {
 	fun()
 	
 	fmt.Println("")
 }
 
-func fun() {
-	
-}

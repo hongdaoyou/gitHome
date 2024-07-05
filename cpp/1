@@ -1,0 +1,9 @@
+a.cpp: In member function ‘void Test::proceduce()’:
+a.cpp:60:43: error: expected ‘;’ before ‘$i’
+   60 |                     cout << "I proceduce " $i << endl;
+      |                                           ^~~
+      |                                           ;
+a.cpp: In function ‘int main()’:
+a.cpp:77:22: error: ‘procedure’ is not a member of ‘Test’
+   77 |     thread t2(&Test::procedure, &test);
+      |                      ^~~~~~~~~

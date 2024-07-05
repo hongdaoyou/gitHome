@@ -7,6 +7,7 @@ import (
 
 func fun() {
 
+
 	fmt.Println("")
 }
 

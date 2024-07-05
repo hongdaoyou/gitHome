@@ -1,0 +1,25 @@
+#!/bin/bash
+# 拷贝a.go ,到 具体的文件. 再将a-demo.go 拷贝到,a.go. 达到快速重置
+
+if [ $# -lt 1 ] ;then
+    echo "请输入,要拷贝到,哪个文件" && exit
+fi
+
+dstName=$1
+
+# return
+
+# 获取,扩展名
+extensionName=${dstName##*.}
+
+srcName="a."$extensionName
+if [ ! -e $srcName ];then
+    echo "要拷贝的文件,不存在" && exit
+fi
+
+cp $srcName $dstName
+
+if [ $# -eq 1 ];then
+    # 拷贝,备份
+    cp "a-demo."$extensionName $srcName
+fi

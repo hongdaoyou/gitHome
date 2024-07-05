@@ -5,7 +5,7 @@ class Test {
 
     public function fun() {
 
-        echo 1;
+        echo "";
     } 
     
 }
