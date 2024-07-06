@@ -12,7 +12,14 @@ dstName=$1
 # 获取,扩展名
 extensionName=${dstName##*.}
 
-srcName="a."$extensionName
+# 如果, a.vue,不存在. 那么,就是 A.vue
+if [ -e "a."${extensionName} ] ; then
+    preName="a"
+else
+    preName="A"
+fi
+
+srcName=${preName}"."$extensionName
 if [ ! -e $srcName ];then
     echo "要拷贝的文件,不存在" && exit
 fi
@@ -21,5 +28,8 @@ cp $srcName $dstName
 
 if [ $# -eq 1 ];then
     # 拷贝,备份
-    cp "a-demo."$extensionName $srcName
+    cp ${preName}"-demo."$extensionName $srcName
 fi
+
+echo "拷贝成功"
+
