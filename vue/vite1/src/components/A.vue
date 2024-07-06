@@ -7,13 +7,32 @@
 
 <script setup>
 
-// import { onMounted } from "vue";
 import { ref } from "vue";
+import * as vue from "vue";
 
-// onmount {}
+// onmount({})
 
-// onMounted( (){
-//     console.log(11);
-// });
+// created() {
+//     console.log(AAA);
+// }
+
+
+vue.onMounted( () => {
+    console.log(11);
+});
+
+onBeforeMount( () => {
+    console.log(22);
+});
+
+vue.onUpdated( ()=>{
+    console.log('update');
+});
+
+
+
+// onDestroy()
+
+
 
 </script>

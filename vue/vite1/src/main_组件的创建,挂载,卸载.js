@@ -5,22 +5,19 @@ import A1 from './components/A1.vue'
 
 // createApp(App).mount('#app')
 
+//
+// var app = createApp(App)
 
-// // 创建组件
+// 创建组件
 var app = createApp(A1)
 
-// // 挂载,组件
+// 挂载,组件
 setTimeout(() => {
     app.mount('#app')
 }, 1000);
 
-// // // 卸载,组件
-// setTimeout(() => {
-//     app.unmount();
-// }, 2000);
-
 // 卸载,组件
 setTimeout(() => {
-    app.destroyApp();
-}, 3000);
+    app.unmount();
+}, 2000);
 

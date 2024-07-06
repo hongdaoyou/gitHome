@@ -5,11 +5,8 @@
 if [ $# -eq 0 ];then
     cd ~/data/gitHome
 else
-    echo "AAA"
-    cd ${1} || exit 1;
+    cd ${1} 2>/dev/null || (echo "目录,不存在" && exit 1 );
 fi
-
-
 
 timeVal=$(date +"%H")
 
