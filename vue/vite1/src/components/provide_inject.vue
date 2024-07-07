@@ -2,6 +2,7 @@
 <template>
 AA
 {{ a }}
+{{ prov1 }}
 <button @click="fun">fff</button>
 
 </template>
@@ -21,6 +22,8 @@ function fun(){
 //    alert(2);
     return 3;
 }
+
+const prov1 = vue.inject("prov1", 'defaultVal' );
 
 </script>
 

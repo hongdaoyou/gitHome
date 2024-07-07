@@ -4,6 +4,15 @@ AA
 {{ a }}
 <button @click="fun">fff</button>
 
+<!-- 设置,具体的插槽的位置 -->
+<slot name="a1">
+    defalut-a1
+</slot>
+
+<slot name="a2">
+    defalut-a2
+</slot>
+
 </template>
 
 
