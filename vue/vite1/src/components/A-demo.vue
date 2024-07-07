@@ -1,18 +1,26 @@
 
 <template>
-    
+AA
+{{ a }}
+<button @click="fun">fff</button>
+
 </template>
 
 
 <script setup>
 
-// import { onMounted } from "vue";
 import { ref } from "vue";
+import * as vue from "vue";
 
-// onmount {}
+let a = ref(0);
 
-// onMounted( (){
-//     console.log(11);
-// });
+function fun(){
+    
+    a.value++;
+    console.log(1);
+    alert(2);
+    return 3;
+}
 
 </script>
+

@@ -1,38 +1,34 @@
 
 <template>
-    
-1111
+AA
+{{ a }}
+{{ obj.a1 }}
+<button @click="fun">fff</button>
+
 </template>
 
 
 <script setup>
 
-import { ref } from "vue";
+import { ref, reactive } from "vue";
 import * as vue from "vue";
 
-// onmount({})
+let a = ref(0);
 
-// created() {
-//     console.log(AAA);
-// }
+let obj = reactive({a1:11, a2:22} );
 
+// 重新赋值,失去响应式
+obj = {a1:111, a2:222} ;
 
-vue.onMounted( () => {
-    console.log(11);
-});
+function fun(){
 
-onBeforeMount( () => {
-    console.log(22);
-});
+    ++obj.a1;
 
-vue.onUpdated( ()=>{
-    console.log('update');
-});
-
-
-
-// onDestroy()
-
-
+    // a.value++;
+    console.log(1);
+    alert(2);
+    return 3;
+}
 
 </script>
+

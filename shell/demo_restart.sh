@@ -26,6 +26,7 @@ fi
 
 cp $srcName $dstName
 
+# 只有1个参数,拷贝下. 2个参数,就不拷贝了
 if [ $# -eq 1 ];then
     # 拷贝,备份
     cp ${preName}"-demo."$extensionName $srcName
