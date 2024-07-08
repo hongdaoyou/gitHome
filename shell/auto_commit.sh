@@ -22,11 +22,11 @@ fi
 
 # exit 1;
 
-# 注释
-if [ ${1}="" ];then
+# 注释 第2个参数,就是注释
+if [ $# -lt 2 ];then
     msg=$(date +"%Y-%m-%d")"-${timeMsg}-add";
 else
-    msg=${1}
+    msg=$(date +"%Y-%m-%d")"-${2}";
 fi
 
 

@@ -1,0 +1,11 @@
+{
+  "name": "vite-antd",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "hdy444",
+  "license": "MIT",
+  "dependencies": {
+    "ant-design-vue": "^4.2.3",
+    "vue": "^3.4.31"
+  }
+}

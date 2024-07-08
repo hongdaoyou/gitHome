@@ -1,3 +1,36 @@
-
+# 不上传的文件
+1
 a.out
 
+compopser.lock
+composer.lock
+yarn.lock
+
+me/.~2023-10-17-洪道佑.docx
+
+#############
+
+##### 不上传的目录
+
+# vue的软件包
+node_modules/
+
+# vue 的发布
+dist/
+
+.git/
+.svn/
+.history/
+
+# php-composer 下载的
+vendor/
+
+# go的包目录
+pkg/
+
+# python 的包目录
+site-packages/
+
+
+pma/
+wordpress/
