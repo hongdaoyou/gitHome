@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: my-service
+  name: my-service
+spec:
+  ports:
+  - name: 801-8080
+    port: 801
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: my-service
+  type: ClusterIP
+status:
+  loadBalancer: {}

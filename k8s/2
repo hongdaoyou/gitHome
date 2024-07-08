@@ -1,0 +1,55 @@
+Name:             my-deployment-1-5dd855f645-xqfj9
+Namespace:        default
+Priority:         0
+Service Account:  default
+Node:             minikube/192.168.59.100
+Start Time:       Mon, 08 Jul 2024 17:24:28 +0800
+Labels:           app=my-deployment-1
+                  pod-template-hash=5dd855f645
+Annotations:      <none>
+Status:           Pending
+IP:               10.244.0.45
+IPs:
+  IP:           10.244.0.45
+Controlled By:  ReplicaSet/my-deployment-1-5dd855f645
+Containers:
+  nginx:
+    Container ID:   
+    Image:          nginx
+    Image ID:       
+    Port:           <none>
+    Host Port:      <none>
+    State:          Waiting
+      Reason:       ImagePullBackOff
+    Ready:          False
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-bc76l (ro)
+Conditions:
+  Type              Status
+  Initialized       True 
+  Ready             False 
+  ContainersReady   False 
+  PodScheduled      True 
+Volumes:
+  kube-api-access-bc76l:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    ConfigMapOptional:       <nil>
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type     Reason     Age                    From               Message
+  ----     ------     ----                   ----               -------
+  Normal   Scheduled  8m28s                  default-scheduler  Successfully assigned default/my-deployment-1-5dd855f645-xqfj9 to minikube
+  Warning  Failed     5m49s                  kubelet            Failed to pull image "nginx": error pulling image configuration: download failed after attempts=6: dial tcp 31.13.112.4:443: i/o timeout
+  Warning  Failed     2m38s (x2 over 5m49s)  kubelet            Error: ErrImagePull
+  Warning  Failed     2m38s                  kubelet            Failed to pull image "nginx": error pulling image configuration: download failed after attempts=6: dial tcp 199.59.150.44:443: i/o timeout
+  Normal   BackOff    2m23s (x2 over 5m48s)  kubelet            Back-off pulling image "nginx"
+  Warning  Failed     2m23s (x2 over 5m48s)  kubelet            Error: ImagePullBackOff
+  Normal   Pulling    2m9s (x3 over 8m28s)   kubelet            Pulling image "nginx"

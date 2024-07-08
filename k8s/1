@@ -1,57 +1,97 @@
-Name:             nginx-deployment-7c79c4bf97-cdwdl
-Namespace:        default
-Priority:         0
-Service Account:  default
-Node:             minikube/192.168.59.100
-Start Time:       Sun, 07 Jul 2024 17:15:29 +0800
-Labels:           app=nginx
-                  pod-template-hash=7c79c4bf97
-Annotations:      <none>
-Status:           Pending
-IP:               
-IPs:              <none>
-Controlled By:    ReplicaSet/nginx-deployment-7c79c4bf97
+Name:                 kube-apiserver-minikube
+Namespace:            kube-system
+Priority:             2000001000
+Priority Class Name:  system-node-critical
+Node:                 minikube/192.168.59.100
+Start Time:           Mon, 08 Jul 2024 14:09:23 +0800
+Labels:               component=kube-apiserver
+                      tier=control-plane
+Annotations:          kubeadm.kubernetes.io/kube-apiserver.advertise-address.endpoint: 192.168.59.100:8443
+                      kubernetes.io/config.hash: 0c632318b241af05cd34270273e9b380
+                      kubernetes.io/config.mirror: 0c632318b241af05cd34270273e9b380
+                      kubernetes.io/config.seen: 2023-11-10T04:54:16.918428547Z
+                      kubernetes.io/config.source: file
+Status:               Running
+SeccompProfile:       RuntimeDefault
+IP:                   192.168.59.100
+IPs:
+  IP:           192.168.59.100
+Controlled By:  Node/minikube
 Containers:
-  nginx:
-    Container ID:   
-    Image:          nginx:latest
-    Image ID:       
-    Port:           80/TCP
-    Host Port:      0/TCP
-    State:          Waiting
-      Reason:       ContainerCreating
-    Ready:          False
-    Restart Count:  0
-    Environment:    <none>
+  kube-apiserver:
+    Container ID:  docker://56d0518700c24a356c23ec68f6172a6af0a63b5240057481c43c3da9401527f9
+    Image:         registry.k8s.io/kube-apiserver:v1.28.3
+    Image ID:      docker-pullable://registry.k8s.io/kube-apiserver@sha256:8db46adefb0f251da210504e2ce268c36a5a7c630667418ea4601f63c9057a2d
+    Port:          <none>
+    Host Port:     <none>
+    Command:
+      kube-apiserver
+      --advertise-address=192.168.59.100
+      --allow-privileged=true
+      --authorization-mode=Node,RBAC
+      --client-ca-file=/var/lib/minikube/certs/ca.crt
+      --enable-admission-plugins=NamespaceLifecycle,LimitRanger,ServiceAccount,DefaultStorageClass,DefaultTolerationSeconds,NodeRestriction,MutatingAdmissionWebhook,ValidatingAdmissionWebhook,ResourceQuota
+      --enable-bootstrap-token-auth=true
+      --etcd-cafile=/var/lib/minikube/certs/etcd/ca.crt
+      --etcd-certfile=/var/lib/minikube/certs/apiserver-etcd-client.crt
+      --etcd-keyfile=/var/lib/minikube/certs/apiserver-etcd-client.key
+      --etcd-servers=https://127.0.0.1:2379
+      --kubelet-client-certificate=/var/lib/minikube/certs/apiserver-kubelet-client.crt
+      --kubelet-client-key=/var/lib/minikube/certs/apiserver-kubelet-client.key
+      --kubelet-preferred-address-types=InternalIP,ExternalIP,Hostname
+      --proxy-client-cert-file=/var/lib/minikube/certs/front-proxy-client.crt
+      --proxy-client-key-file=/var/lib/minikube/certs/front-proxy-client.key
+      --requestheader-allowed-names=front-proxy-client
+      --requestheader-client-ca-file=/var/lib/minikube/certs/front-proxy-ca.crt
+      --requestheader-extra-headers-prefix=X-Remote-Extra-
+      --requestheader-group-headers=X-Remote-Group
+      --requestheader-username-headers=X-Remote-User
+      --secure-port=8443
+      --service-account-issuer=https://kubernetes.default.svc.cluster.local
+      --service-account-key-file=/var/lib/minikube/certs/sa.pub
+      --service-account-signing-key-file=/var/lib/minikube/certs/sa.key
+      --service-cluster-ip-range=10.96.0.0/12
+      --tls-cert-file=/var/lib/minikube/certs/apiserver.crt
+      --tls-private-key-file=/var/lib/minikube/certs/apiserver.key
+    State:          Running
+      Started:      Mon, 08 Jul 2024 14:09:25 +0800
+    Last State:     Terminated
+      Reason:       Completed
+      Exit Code:    0
+      Started:      Sun, 07 Jul 2024 17:53:41 +0800
+      Finished:     Sun, 07 Jul 2024 17:53:49 +0800
+    Ready:          True
+    Restart Count:  8
+    Requests:
+      cpu:        250m
+    Liveness:     http-get https://192.168.59.100:8443/livez delay=10s timeout=15s period=10s #success=1 #failure=8
+    Readiness:    http-get https://192.168.59.100:8443/readyz delay=0s timeout=15s period=1s #success=1 #failure=3
+    Startup:      http-get https://192.168.59.100:8443/livez delay=10s timeout=15s period=10s #success=1 #failure=24
+    Environment:  <none>
     Mounts:
-      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-tqghq (ro)
+      /etc/ssl/certs from ca-certs (ro)
+      /usr/share/ca-certificates from usr-share-ca-certificates (ro)
+      /var/lib/minikube/certs from k8s-certs (ro)
 Conditions:
   Type              Status
   Initialized       True 
-  Ready             False 
-  ContainersReady   False 
+  Ready             True 
+  ContainersReady   True 
   PodScheduled      True 
 Volumes:
-  kube-api-access-tqghq:
-    Type:                    Projected (a volume that contains injected data from multiple sources)
-    TokenExpirationSeconds:  3607
-    ConfigMapName:           kube-root-ca.crt
-    ConfigMapOptional:       <nil>
-    DownwardAPI:             true
-QoS Class:                   BestEffort
-Node-Selectors:              <none>
-Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
-                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
-Events:
-  Type     Reason           Age                  From               Message
-  ----     ------           ----                 ----               -------
-  Normal   Scheduled        21m                  default-scheduler  Successfully assigned default/nginx-deployment-7c79c4bf97-cdwdl to minikube
-  Warning  Failed           16m                  kubelet            Failed to pull image "nginx:latest": error pulling image configuration: download failed after attempts=6: dial tcp 69.171.224.40:443: i/o timeout
-  Warning  Failed           16m                  kubelet            Error: ErrImagePull
-  Normal   BackOff          16m                  kubelet            Back-off pulling image "nginx:latest"
-  Warning  Failed           16m                  kubelet            Error: ImagePullBackOff
-  Normal   Pulling          16m (x2 over 21m)    kubelet            Pulling image "nginx:latest"
-  Warning  NetworkNotReady  3m3s (x2 over 3m5s)  kubelet            network is not ready: container runtime network not ready: NetworkReady=false reason:NetworkPluginNotReady message:docker: network plugin is not ready: cni config uninitialized
-  Warning  FailedMount      3m2s (x4 over 3m5s)  kubelet            MountVolume.SetUp failed for volume "kube-api-access-tqghq" : object "default"/"kube-root-ca.crt" not registered
-  Normal   SandboxChanged   2m57s                kubelet            Pod sandbox changed, it will be killed and re-created.
-  Normal   Pulling          2m54s                kubelet            Pulling image "nginx:latest"
+  ca-certs:
+    Type:          HostPath (bare host directory volume)
+    Path:          /etc/ssl/certs
+    HostPathType:  DirectoryOrCreate
+  k8s-certs:
+    Type:          HostPath (bare host directory volume)
+    Path:          /var/lib/minikube/certs
+    HostPathType:  DirectoryOrCreate
+  usr-share-ca-certificates:
+    Type:          HostPath (bare host directory volume)
+    Path:          /usr/share/ca-certificates
+    HostPathType:  DirectoryOrCreate
+QoS Class:         Burstable
+Node-Selectors:    <none>
+Tolerations:       :NoExecute op=Exists
+Events:            <none>
