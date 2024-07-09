@@ -1,56 +1,50 @@
 #include <iostream>
-#include <queue>
-#include <thread>
-#include <mutex>
-#include <condition_variable>
+#include <asio.hpp>
 
-std::queue<int> queue;              // 用于存放数据的队列
-std::mutex mtx;                     // 互斥锁，保护对队列的访问
-std::condition_variable condVar;    // 条件变量，用于通知生产者和消费者
+using namespace std;
 
-const int MaxItems = 10;            // 队列的最大容量
-const int MaxProduced = 20;         // 生产者生产的最大数据量
+using namespace asio;
 
-void producer() {
-    for (int i = 0; i < MaxProduced; ++i) {
-        std::this_thread::sleep_for(std::chrono::milliseconds(500)); // 模拟生产过程
-        {
-            std::unique_lock<std::mutex> lock(mtx);
-            if (queue.size() >= MaxItems) {
-                std::cout << "Queue is full. Producer waits." << std::endl;
-                condVar.wait(lock, []{ return queue.size() < MaxItems; });
-            }
-            queue.push(i);
-            std::cout << "Produced: " << i << std::endl;
+using ip::udp;
+
+#define SERVER_PORT 6666
+
+
+// 调试类
+class Test {
+    public:
+        void fun(){
+            asio::io_context context;
+
+            // 创建,服务器的端点
+            udp::endpoint ep(ip::address::from_string("127.0.0.1"), SERVER_PORT);
+
+            // 创建,客户端的,udp套接字 
+            udp::socket ss(context, asio::ip::udp::v4() );
+
+            cout << "client: 发送" << endl;
+            
+            const std::string str= "2222";
+            // 发送,udp数据
+            ss.send_to(asio::buffer(str), ep);
+
+            char recvData[1024];
+            
+            udp::endpoint recv_ep;
+
+            // 接收数据
+            int len = ss.receive_from(asio::buffer(recvData), recv_ep);
+            cout << "client:" << recvData << endl;
+
+            cout << 1 << endl;
         }
-        condVar.notify_all(); // 通知消费者，队列中有数据
-    }
-}
-
-void consumer() {
-    while (true) {
-        std::this_thread::sleep_for(std::chrono::milliseconds(1000)); // 模拟消费过程
-        {
-            std::unique_lock<std::mutex> lock(mtx);
-            if (queue.empty()) {
-                std::cout << "Queue is empty. Consumer waits." << std::endl;
-                condVar.wait(lock, []{ return !queue.empty(); });
-            }
-            int item = queue.front();
-            queue.pop();
-            std::cout << "Consumed: " << item << std::endl;
-        }
-        condVar.notify_all(); // 通知生产者，队列中有空间
-    }
-}
+    
+};
 
 int main() {
-    std::thread producerThread(producer);
-    std::thread consumerThread(consumer);
-    
-    producerThread.join();
-    consumerThread.join();
+	
+	// 调试
+    Test test;
+    test.fun();
 
-    return 0;
 }
-

@@ -1,9 +1,3 @@
-a.cpp: In member function ‘void Test::proceduce()’:
-a.cpp:60:43: error: expected ‘;’ before ‘$i’
-   60 |                     cout << "I proceduce " $i << endl;
-      |                                           ^~~
-      |                                           ;
-a.cpp: In function ‘int main()’:
-a.cpp:77:22: error: ‘procedure’ is not a member of ‘Test’
-   77 |     thread t2(&Test::procedure, &test);
-      |                      ^~~~~~~~~
+terminate called after throwing an instance of 'boost::wrapexcept<std::system_error>'
+  what():  connect: Connection refused
+/home/hdy/data/note/0-wen/0-batch/系统脚本/run-cpp：行 3: 1631140 已放弃               （核心已转储） ./a.out
