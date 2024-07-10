@@ -1,0 +1,37 @@
+
+# 如果 预检请求,就允许. 并且, 并且,设置,各种允许, header
+# if ( $request_method )
+#  if ($http_method = "options" && ($http_origin ~* ".*.hongdaoyou.cn" ) {
+# if ($request_method = "OPTIONS" && ($http_origin ~* "a.com" )) {
+if ($request_method = "OPTIONS" ) {
+# if ($request_method = "OPTIONS" && ($http_origin ~* "hongdaoyou.cn" ) {
+    # if ( $http_origin ~ "hongdaoyou.cn" ) {
+        # 添加,源头 
+        # add_header HTTP_ORIGIN $http_origin;
+        add_header "Access-Control-Allow-Origin" $http_origin;
+
+        # 添加header
+        # add_header HTTP_HEADER "cookies,";
+        # add_header 'Access-Control-Allow-Headers' 'DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range';
+        add_header 'Access-Control-Allow-Headers' '*';
+        
+        # 添加, method
+        # add_header HTTP_METHOD "GET,POST,OPTIONS";
+        # add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS';
+        add_header 'Access-Control-Allow-Methods' '*';
+
+        # 添加,缓存的最长时间
+        # add_header HTTP_EXPIRE_MAX_AGE 1230 
+        add_header 'Access-Control-Max-Age' 1728000;
+        
+        add_header Access-Control-Allow-Credentials "true";
+
+        add_header 'Content-Type' 'text/plain; charset=utf-8';
+        add_header 'Content-Length' 0;
+        
+
+        # 返回204
+        return 204;
+    # }
+
+}
