@@ -8,10 +8,16 @@ compopser.lock
 composer.lock
 yarn.lock
 
+# java,编译的
+*.class
 
 #############
 
 ##### 不上传的目录
+
+# 我的测试目录
+d1/
+d2/
 
 # vue的软件包
 node_modules/

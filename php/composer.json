@@ -1,0 +1,17 @@
+{
+    "name": "hdy/php",
+    "autoload": {
+        "psr-4": {
+            "Hdy\\Php\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "hongdaoyou",
+            "email": "daoyouhong@gmail.com"
+        }
+    ],
+    "require": {
+        "symfony/http-client": "^5.4"
+    }
+}

@@ -24,7 +24,12 @@ if [ ! -e $srcName ];then
     echo "要拷贝的文件,不存在" && exit
 fi
 
-cp $srcName $dstName
+# 目标文件的前缀
+dstNamePre=${dstName%.*}
+# 只拷贝,给自己
+if [ $dstNamePre != 'a' -a $dstNamePre != 'A' ];then
+    cp $srcName $dstName
+fi
 
 # 只有1个参数,拷贝下. 2个参数,就不拷贝了
 if [ $# -eq 1 ];then
