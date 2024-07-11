@@ -3,7 +3,7 @@
 void fun() {
 
 
-    printf("\n");
+    printf("%d\n", 1);
 
 }
 
