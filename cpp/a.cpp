@@ -1,17 +1,21 @@
-#include "common.h"
+#include <iostream>
 
 using namespace std;
 
+
+
 // 调试类
-class Server {
+class Test {
     public:
         void fun(){
-            std::system("clear");
-        
+            debug(11, "abc");
+
             cout << 1 << endl;
         }
     
 };
+
+
 
 int main() {
 	
