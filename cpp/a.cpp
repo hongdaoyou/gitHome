@@ -1,4 +1,5 @@
 #include <iostream>
+#include <memory>
 
 using namespace std;
 
@@ -6,11 +7,13 @@ using namespace std;
 
 // 调试类
 class Test {
+    shared_ptr<int> sp1;
     public:
         void fun(){
-            debug(11, "abc");
+            sp1 = make_shared<int>(10);
 
-            cout << 1 << endl;
+            *sp1 = 10;
+            cout << *sp1 << endl;
         }
     
 };
