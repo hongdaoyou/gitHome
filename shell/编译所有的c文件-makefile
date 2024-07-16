@@ -1,0 +1,21 @@
+
+# all: a b
+
+# a := *.c
+# 源文件
+a := $(wildcard *.c)
+
+# OBJS := ${a%.c}  # makefile,不可以这样用.
+# 目标文件
+OBJS := $(a:.c=)
+
+# 指定的第一个目标
+all: ${OBJS}
+# echo $a
+# echo ${OBJS}
+
+
+# 编译
+%:%.c
+	gcc -o $@ $^
+
