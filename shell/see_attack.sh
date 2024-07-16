@@ -30,6 +30,9 @@ function see_attack() {
     echo -e "\n当前在线的,所有用户"
     who
     
+    echo -e "\n当前的套接字情况: CLOSE-WAIT,fin包  SYN-RECV-syn同步包-查看是否被攻击了"
+    ss -t | awk '!/State/{print $1}' | sort  | uniq -c
+
 }
 
 # 列出,日志文件的位置,大小
