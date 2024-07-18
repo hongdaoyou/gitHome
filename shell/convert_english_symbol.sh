@@ -10,11 +10,12 @@ function convert_english_symbol() {
     # 默认的文件名
     if [ $# -eq 0 ];then
         file="tmp1"
-    elif [[ "$1" =~ "^tmp" ]];then  # tmp开头的
+    elif [[ "$1" =~ ^tmp ]];then  # tmp开头的
         file=$1
     else
         fileName=$1;
     fi
+    # echo $fileName;
 
     # 添加前缀
     if [ -z "$fileName" ];then
@@ -52,7 +53,11 @@ function convert_english_symbol() {
     done
 
     sed -i "$reStr" $fileName
-
+    if [ $? -eq 0 ];then
+        echo "操作成功";
+    else
+        echo "操作失败";
+    fi
     # cmdStr=$(cat $fileName | sed -n "$reStr")
     # echo $cmdStr
 }
