@@ -1,50 +1,15 @@
 #!/bin/bash
 # set -x
 
+source common.sh
+
 # 最大的深度
 maxDepth=3
 
 # 检查,是否匹配到,特定的路径
 function check_match_file() {
     # 匹配到,就不用继续,遍历
-    noMatchDir=(
-        "/bin/"
-        "/sbin/"
-        "/usr/"
-        "/etc/"
-        "/root/"
-
-        "/opt/"
-        "/var/"
-        "/tmp/"
-        "/run/"
-        "/lib/"
-        "/lib64/"
-        "/cdrom/"
-        "/sys/"
-        "/proc/"
-        "/boot/"
-        "/snap/"
-        "/dev/"
-        "/lost+found"
-        "/\*"
-        /[0-9]+/
-
-        "/下载"
-        "/b/"
-
-        "/node_modules/"
-        "/dist/"
-        "/.git/"
-        ".svn/"
-        "/.history/"
-        "/vendor/"
-        "/pkg/"
-        "/site-packages/"
-
-        "/pma/"
-        "/wordpress/"
-    )
+    local noMatchFileDir=${noMatchFileDir}
 
     local inputFile=$1
 
@@ -63,25 +28,7 @@ function check_match_file() {
 function du_size() {
     
     # 不用,查找大小的路径
-    local noDuFileArr=(
-        "/proc/"
-        "/run/"
-        "/[0-9]+/"
-        "/lost+found"
-        "/\*"
-
-        # 因为,在它之前,已经统计过了
-        "/.git/"
-        "/node_modules/"
-        "/dist/"
-        ".svn/"
-        "/.history/"
-        "/vendor/"
-        "/pkg/"
-        "/site-packages/"
-        "/pma/"
-        "/wordpress/"
-    )
+    local noDuFileArr=${noDuFileArr};
 
     local inputFile=$1
 

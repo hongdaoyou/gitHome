@@ -1,23 +1,12 @@
 #!/bin/bash
+source common.sh
 
 # set -x
 
 # 搜索,某个内容. 并且,排除一些目录
 function grep_text() {
-    noMatchDir=(
-        # "awk"
-        "node_modules"
-        "dist"
-        ".git"
-        ".svn"
-        ".history"
-        "vendor"
-        "pkg"
-        "site-packages"
-
-        "pma"
-        "wordpress"
-    )
+    # 不用匹配的
+    local noMatchDir=$noMatchDir
 
     local excludeStr;
     for file in ${noMatchDir[@]};do
