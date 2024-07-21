@@ -14,6 +14,6 @@ func fun() {
 func main() {
 	fun()
 	
-	fmt.Println("")
+	fmt.Printf("")
 }
 

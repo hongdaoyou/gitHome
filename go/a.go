@@ -7,12 +7,13 @@ import (
 
 func fun() {
 
+
 	fmt.Println("")
 }
 
 func main() {
 	fun()
 	
-	fmt.Println("")
+	fmt.Printf("")
 }
 
