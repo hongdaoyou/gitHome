@@ -2,6 +2,7 @@
 
 # pid=206140; 
 pid=${1}
+firstPid=$pid
 
 while [ "$pid" -gt 1 ]; do
     ppid=$(ps -o ppid= -p $pid);
@@ -12,5 +13,13 @@ while [ "$pid" -gt 1 ]; do
     pid=$ppid;
 done
 
+
+# 查找,它的子进程
+function find_child() {
+    # ppid=$(ps -o pid -ppid $pid)
+    $(pgrep -P $firstPid  | xargs -r ps -p)
+}
+
+find_child
 
 

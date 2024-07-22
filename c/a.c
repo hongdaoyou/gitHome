@@ -1,18 +1,14 @@
-#include <stdio.h>
-#include <stdlib.h>
-// #include <string.h> 
-
 #include "common.h"
 
+#include <stdio.h>
+
+
 void fun() {
-    char *str = "1234ab";
-    int a = atoi(str);
 
-    char *endPtr;
-    int b = strtol(str, &endPtr, 10);
-
-    printf("%d %d\n", a, b );
-    printf("%s\n", endPtr );
+    char buf[1024] = "ddd";
+    debug(4, "aaa", 11, buf, 1234);
+    
+    // printf("%d\n", 1);
 
 }
 
