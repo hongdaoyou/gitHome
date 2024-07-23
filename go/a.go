@@ -7,6 +7,9 @@ import (
 
 func fun() {
 
+	func() {
+		fmt.Println("1111")
+	}();
 
 	fmt.Println("")
 }
