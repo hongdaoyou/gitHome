@@ -11,7 +11,11 @@ class Test {
     private $passwd = '123456';
 
     private $conn;
-
+    public function fun() {
+        $this->search();
+        // $this->insert_delete_update();
+    }
+    
     public function connect() {
         // 连接
         $this->conn = mysqli_connect($this->host, $this->user, $this->passwd,  $this->db,$this->port );
@@ -23,10 +27,7 @@ class Test {
         $this->connect();
 
     }
-    public function fun() {
-        $this->search();
-        // $this->insert_delete_update();
-    }
+
 
     // 查找
     public function search() {

@@ -24,6 +24,7 @@ function convert_english_symbol() {
 
     declare -A symbolArr=(
         ['，']=','
+        [' ']=' '
         ['。']='.'
         
         ['！']='!'
