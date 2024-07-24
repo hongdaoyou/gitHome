@@ -1,23 +1,11 @@
 #!/bin/bash
 # set -x
+source common.sh
 
 # 排除,某些目录,查找,某些文件
 function find_file() {
-    excludeDir=(
-        "*/.git/*"
-        "*/.svn/*"
-        "*/data/.history/*"
-        "*/node_modules/*"
-        "*/vendor/*"
-        "*/node_modules/*"
-        "*/dist/*"
-        "*/pkg/*"
-        "*/site-packages/*"
-        "*/pma/*"
-        "*/wordpress/*"
-        "*/Release/*"
-        "*/lib/*"
-    )
+    local excludeDir=${excludeDir}
+
     if [ $# -lt 2 ];then
         echo "参数不够"; exit;
     fi
@@ -58,6 +46,4 @@ function find_file() {
 
 
 find_file $1 $2
-
-
 

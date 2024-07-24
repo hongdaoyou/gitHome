@@ -81,3 +81,20 @@ noMatchDir=(
     "wordpress"
     "*cache*"
 )
+
+# 不用拷贝,和查找的目录
+excludeDir=(
+    "*/.git/*"
+    "*/.svn/*"
+    "*/data/.history/*"
+    "*/node_modules/*"
+    "*/vendor/*"
+    "*/node_modules/*"
+    "*/dist/*"
+    "*/pkg/*"
+    "*/site-packages/*"
+    "*/pma/*"
+    "*/wordpress/*"
+    "*/Release/*"
+    "*/lib/*"
+)

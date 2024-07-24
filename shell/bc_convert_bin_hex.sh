@@ -6,7 +6,7 @@
 function convert_bin_hex() {
 
     if [ $# -lt 2 ];then
-        echo "打印字符串"; exit 1;
+        echo "请输入,足够的参数"; exit 1;
     fi
     local ibase=$1
     local obase=$2
