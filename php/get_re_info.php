@@ -5,7 +5,7 @@
 
 1 调用
     https://localhost/gitHome/php/get_re_info.php
-
+    php $gitHome/php/get_re_info.php
 
 */
 
@@ -19,7 +19,6 @@ class Test {
         // 正则字符串
         $reStr = "//";
         $reStr = "/\#{6} --(.*)\n```\n{1,}```/";
-
 
         if ($reStr == "//") {
             echo "正则字符串,为空\n";

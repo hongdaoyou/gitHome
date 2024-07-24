@@ -29,6 +29,9 @@ function demo_create() {
         [js]=${dirName}/js/${defalutFileName}
 
         [vue]=${dirName}/vue/vite1/src/components/A-demo.vue
+
+        [sh]=${dirName}/shell/${defalutFileName}
+
     )
     # echo ${mapArr[$extensionName]} ;
 

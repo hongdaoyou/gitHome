@@ -6,7 +6,12 @@ using namespace std;
 class Test {
     public:
         void fun(){
-        
+            char a[] = "ABCDEF"; 
+            // char *c = "ABCDEF"; 
+
+            char b[] = {'A', 'B', 'C', 'D', 'E', 'F'};
+
+            cout << sizeof(a) << " " << sizeof(b) << endl;
             cout << 1 << endl;
         }
     

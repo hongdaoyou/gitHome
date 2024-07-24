@@ -7,6 +7,12 @@ fi
 
 dstName=$1
 
+if [ -f $dstName ];then
+    echo "要拷贝的目标文件,已存在, 请手动删除. 避免,被误覆盖"; exit 1;
+
+fi
+
+
 # return
 
 # 获取,扩展名
