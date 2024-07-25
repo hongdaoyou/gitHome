@@ -5,11 +5,10 @@
 
 void fun() {
 
-    char buf[1024] = "ddd";
-    debug(4, "aaa", 11, buf, 1234);
-    
-    // printf("%d\n", 1);
+   int a,b;
+   a = (b=10);
 
+    printf("%d %d", a, b);
 }
 
 int main() {

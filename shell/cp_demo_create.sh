@@ -31,6 +31,7 @@ function demo_create() {
         [vue]=${dirName}/vue/vite1/src/components/A-demo.vue
 
         [sh]=${dirName}/shell/${defalutFileName}
+        [py]=${dirName}/python/${defalutFileName}
 
     )
     # echo ${mapArr[$extensionName]} ;
