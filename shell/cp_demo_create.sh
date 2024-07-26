@@ -32,6 +32,7 @@ function demo_create() {
 
         [sh]=${dirName}/shell/${defalutFileName}
         [py]=${dirName}/python/${defalutFileName}
+        [html]=${dirName}/html/${defalutFileName}
 
     )
     # echo ${mapArr[$extensionName]} ;

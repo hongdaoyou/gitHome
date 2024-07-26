@@ -13,6 +13,7 @@
 <body>
     
     <div>
+        <input type="range" min="10" max="20">
 
     </div>
 
@@ -20,14 +21,13 @@
 
 <script type="text/javascript">
 
-class Test {
-    fun() {
-        console.log();
-    }
+obj = document.querySelector("input"); // 返回第一个元素
+obj.onchange = function (event) {
+    console.log(this.value); // this,也指向,当前的元素
+
+    console.log(event.target.value );
 }
 
-var obj = new Test();
-obj.fun();
 
 </script>
 
