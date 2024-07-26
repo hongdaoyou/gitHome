@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+    </style>
+    
+</head>
+<body>
+    
+    <div>
+        <button>111</button>
+    </div>
+
+</body>
+
+<script type="text/javascript">
+
+var obj = document.querySelector("button");
+obj.onclick = function (event) {
+    console.log(this.outerHTML); // this,也指向,当前的元素
+
+}
+
+
+class Test {
+    fun() {
+        console.log();
+    }
+}
+
+var obj = new Test();
+obj.fun();
+
+</script>
+
+</html>

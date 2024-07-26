@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+    </style>
+    
+</head>
+<body>
+    <input type="checkbox" name="a1" value="11" />
+    <input type="checkbox" name="a1" value="22" />
+    <input type="checkbox" name="a1" value="33" />
+    
+
+</body>
+
+<script type="text/javascript">
+
+var obj = document.querySelector("input[type=checkbox]"); // 返回第一个元素
+obj.onchange = function (event) {
+    // console.log(this.outerHTML)
+    // 存储结果
+    var result = [];
+
+    // 获取,复选框
+    var checkboxArr= document.querySelectorAll("input[type=checkbox][name=a1]");
+    
+    // 遍历,复选框对象
+    checkboxArr.forEach(elem => {
+        if (elem.checked) {
+            result.push(elem.value);
+        }
+    });
+
+    // 单元
+    console.log(result);
+}
+
+
+class Test {
+    fun() {
+        console.log();
+    }
+}
+
+var obj = new Test();
+obj.fun();
+
+</script>
+
+</html>
