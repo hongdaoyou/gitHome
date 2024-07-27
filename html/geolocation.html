@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+    </style>
+    
+</head>
+<body>
+    
+    <div>
+        <p id="demo">点击这个按钮, 获得您的坐标：</p>
+        <button onclick="getLocation()">试一下</button>
+        
+    </div>
+
+</body>
+
+<script type="text/javascript">
+
+function getLocation() {
+    // 检测是否支持地理定位
+    if (! navigator.geolocation) {
+        var x = document.getElementById('demo');
+        x.innerHTML = "browser is not supported Geolocation";
+        return;
+    }
+    console.log("111")
+        var options = {
+            enableHighAccuracy: false,
+            timeout: 500,
+            maximumAge: 0
+        };
+
+    // 获取地理位置
+    navigator.geolocation.getCurrentPosition(showFun, errorCallback,options );
+
+}
+
+function errorCallback(error) {
+    console.log('Error occurred: ' + error.message);
+}
+
+
+
+function showFun(pos) {
+    var lat = pos.coords.latitude;
+    var long = pos.coords.longitude;
+    
+    var x = document.getElementById('demo');
+    x.innerHTML = "Lat:" + lat + "<br>Long:" + long;
+    console.log("x.innerHTML")
+}
+
+
+class Test {
+    fun() {
+        console.log();
+    }
+}
+
+var obj = new Test();
+obj.fun();
+
+</script>
+
+</html>

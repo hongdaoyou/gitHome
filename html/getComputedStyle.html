@@ -13,9 +13,9 @@
 <body>
     
     <div>
-        <input type="tel" />
-        <input type="month" />
-    
+        <!-- <div onmouseover="this.style.fontSize+='50px'; console.log('aa');">11111</div> -->
+        <div onmouseover="console.log('aa-' + window.getComputedStyle(this).fontSize ); this.style.fontSize=(parseFloat(window.getComputedStyle(this).fontSize)+10)+'px'; ">11111</div>
+
     </div>
 
 </body>

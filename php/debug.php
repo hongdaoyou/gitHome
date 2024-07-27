@@ -1,13 +1,12 @@
 <?php
 
-const DEBUG_FLAG = true;
 
-// 调试函数
 function debug(...$a ) {
-    if (! DEBUG_FLAG) return;
 
     foreach ($a as $val) {
         var_dump($val);
     }
 
 }
+
+debug(11, "abc", [11,22],222);

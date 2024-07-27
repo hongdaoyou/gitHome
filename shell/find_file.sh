@@ -5,6 +5,7 @@ source common.sh
 # 排除,某些目录,查找,某些文件
 function find_file() {
     local excludeDir=${excludeDir}
+    # local excludeDir=("${excludeDir[@]}")
 
     if [ $# -lt 2 ];then
         echo "参数不够"; exit;
@@ -18,7 +19,8 @@ function find_file() {
 
     excludeStr=" \( "
     len=${#excludeDir[@]};
-    
+    echo $len;
+
     # 最后,一个下标
     let lastIndex=${len}-1
 
@@ -37,7 +39,7 @@ function find_file() {
         fi
     done
     # echo $excludeStr;
-
+    # set -x
     cmd="find $findDir ${excludeStr} -iname \*${fileName}\* "
     # echo $cmd;
 
