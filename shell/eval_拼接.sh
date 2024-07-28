@@ -11,6 +11,15 @@ function fun() {
     eval $a
 }
 
+function fun() {
+
+    # $(echo "ls -l")
+    a=$(ls -l)
+    echo "$a";
+
+    eval "ls -l"
+
+}
 
 fun
 
