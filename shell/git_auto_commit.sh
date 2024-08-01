@@ -36,6 +36,7 @@ git commit -m ${msg}
 
 # commit成功后,才提交
 if [ $? -eq 0 ];then
+    echo "已经commit的. 正在push"
     git push
 fi
 
