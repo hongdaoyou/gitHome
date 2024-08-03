@@ -98,3 +98,14 @@ excludeDir=(
     "*/Release/*"
     "*/lib/*"
 )
+
+# 通用的shell 路径
+binPathArr=(
+    $gitHome/shell
+    $gitHome/shell/bin
+
+    $gitHome/docker/bin
+
+    $gitHome/php/bin
+
+);
