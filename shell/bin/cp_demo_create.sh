@@ -10,6 +10,9 @@ function demo_create() {
     fi
 
     fileName=${1}
+    if [ -e $fileName ];then
+        echo "该文件,已存在.请先手动删除.";exit 1;
+    fi
 
     # echo $fileName;
     extensionName=${fileName##*.}

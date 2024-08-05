@@ -108,4 +108,9 @@ binPathArr=(
 
     $gitHome/php/bin
 
+    $gitHome/re/bin
+    $gitHome/git/bin
+    $gitHome/redis/bin
+    $gitHome/mysql/bin
+
 );

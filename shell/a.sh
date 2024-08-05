@@ -3,6 +3,7 @@
 
 function fun() {
 
+    strace 
 }
 
 
