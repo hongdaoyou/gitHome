@@ -1,15 +1,13 @@
-#include "common.h"
-
 #include <stdio.h>
-
+#include "common.h"
 
 void fun() {
 
-   int a,b;
-   a = (b=10);
 
-    printf("%d %d", a, b);
+    printf("%d\n", 1);
+
 }
+
 
 int main() {
     fun();
