@@ -9,14 +9,14 @@ maxDepth=3
 # 检查,是否匹配到,特定的路径
 function check_match_file() {
     # 匹配到,就不用继续,遍历
-    local noMatchFileDir=${noMatchFileDir}
+    local noMatchFileDir="${noMatchFileDir[@]}"
 
     local inputFile=$1
 
     # local isMatch=0
     # 遍历,是否匹配到
     local file;
-    for file in ${noMatchDir[@]};do
+    for file in ${noMatchFileDir[@]};do
         if [[ "$inputFile" =~ "$file"  ]];then
             return 1;
         fi
@@ -28,8 +28,8 @@ function check_match_file() {
 function du_size() {
     
     # 不用,查找大小的路径
-    local noDuFileArr=${noDuFileArr};
-
+    local noDuFileArr=${noDuFileArr[@]};
+    
     local inputFile=$1
 
     # 如果是目录, 添加/
@@ -72,9 +72,16 @@ function find_max_file_real() {
         return
     fi
 
+    
     # 遍历目录  如果文件,是目录,那么,继续递归
     for file in "$fileName"*; do
         # echo $file;
+
+        # if [[ "$file" = "."  ||  "$file" = ".." ]] ; then
+        #     echo "aaa";
+        #     continue;
+        # fi
+        # echo "bbb";
 
         # exit;
         # if
@@ -113,13 +120,31 @@ function find_max_file() {
     # if [ $# -eq 0 ];then
     #     dirName="/";
     # fi
+    if [ $dirName = "." ];then
+        dirName=$(pwd)
+    fi
 
-    find_max_file_real ${dirName} 0 | sort -nr | awk '{ print $1/1024/1024, "Gb", $2,$3,$4 }' | head -30 > ~/1
+    find_max_file_real ${dirName} 0 | sort -nr | awk '{ print $1/1024/1024, "Gb", $2,$3,$4 }' | head -30 
+    # find_max_file_real ${dirName} 0  >> 1
 
-    cat ~/1
+    # cat ~/1
 }
 
+t1=$(date +"%s")
+
 find_max_file $1
+
+t2=$(date +"%s")
+
+# t2=1111
+# t1=1;
+# echo "$t1 $t2";
+# t2=1722917149
+# t1=1722917132;
+
+# echo "花费的时间"`echo "($t2 - $t1)/60" | bc`" 秒" 
+let t3=t2-t1; 
+echo "花费的时间 $t3 秒"  
 
 # cat 1 | sort -nr | awk '{ print $1/1024, "Mb", $2 }' | head -10
 # cat 1 | sort -nr | awk '{ print $1/1024/1024, "Gb", $2,$3,$4 }' | head -30
