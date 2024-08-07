@@ -1,11 +1,11 @@
 #!/bin/bash
-source common.sh
 
 
 function fun() {
+    if [ $# -eq 0 ];then
+        echo "请输入,参数"; exit 1;
+    fi
 
-    local noDuFileArr=${noDuFileArr[@]};
-    
 
 }
 
