@@ -15,11 +15,11 @@ function kill_by_cmdName() {
     if [  "$str" = "" ];then
         echo "未找到,该进程";
     else
-        echo $str;
+        echo "$str";
     fi
 
     if [  "$confirmFlag" = "1" ]; then
-        ps -ef | grep $cmdName  | grep -v "grep" | grep -v "kill_by_cmdName.sh" | awk '{print $2}' | xargs -r  kill
+        ps -ef | grep $cmdName  | grep -v "grep" | grep -v "kill_by_cmdName.sh" | awk '{print $2}' | xargs -r  kill -9
 
         if [ $? -eq 0 ];then
             echo "已kill";
