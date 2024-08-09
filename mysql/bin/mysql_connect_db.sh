@@ -1,5 +1,5 @@
 #!/bin/bash
-set -x
+# set -x
 # 连接数据库
 function connect_db() {
     
@@ -14,9 +14,18 @@ function connect_db() {
     if [ -n "$2" ];then
         passwd=$2
     fi
-    mysql -u ${user} -p${passwd}
 
+
+    # echo $3;
+    if [ -z "$3" ]; then
+        # echo "11"
+        mysql -u ${user} -p${passwd}
+    else
+        # 执行命令
+        # echo "22"
+        mysql -u ${user} -p${passwd} -e "$3"
+    fi
 }
 
-connect_db $1 $2
+connect_db $1 $2 "$3"
 
