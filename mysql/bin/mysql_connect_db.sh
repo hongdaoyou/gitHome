@@ -7,25 +7,28 @@ function connect_db() {
     local user="root";
     local passwd="123456";
 
-    if [ -n "$1" ];then
-        user=$1
-    fi
-    
-    if [ -n "$2" ];then
-        passwd=$2
-    fi
+    # if [ $# -eq 2 ]; then
+    #     if [ -n "$1" ];then
+    #         user=$1
+    #     fi
+        
+    #     if [ -n "$2" ];then
+    #         passwd=$2
+    #     fi
 
+    # fi
 
     # echo $3;
-    if [ -z "$3" ]; then
+    # 没有参数
+    if [  $# -eq 0 ]; then
         # echo "11"
         mysql -u ${user} -p${passwd}
     else
         # 执行命令
         # echo "22"
-        mysql -u ${user} -p${passwd} -e "$3"
+        mysql -u ${user} -p${passwd} -e "$@"
     fi
 }
 
-connect_db $1 $2 "$3"
+connect_db "$@"
 

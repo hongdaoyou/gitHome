@@ -4,7 +4,7 @@ source common.sh
 
 # 排除,某些目录,查找,某些文件
 function find_file() {
-    local excludeDir=${excludeDir}
+    local excludeDir=("${excludeDir[@]}")
     # local excludeDir=("${excludeDir[@]}")
 
     if [ $# -lt 2 ];then
@@ -17,9 +17,9 @@ function find_file() {
     # 文件名
     fileName=${2}
 
-    excludeStr=" \( "
+    excludeStr=" ( "
     len=${#excludeDir[@]};
-    echo $len;
+    # echo $len;
 
     # 最后,一个下标
     let lastIndex=${len}-1
@@ -28,11 +28,12 @@ function find_file() {
     for (( i=0; i<${len}; i++ ));do
         # excludeStr=${excludeStr}" -path "${excludeDir[i]}" -prune"
         # excludeStr="${excludeStr} -path ${excludeDir[i]} -prune"
-        excludeStr+=" -path ${excludeDir[$i]} "
+        excludeStr+=" -path \'${excludeDir[$i]}\' "
+        # echo -e "${excludeDir[$i]}\n";
 
         # 最后一个下标
         if [ $i -eq $lastIndex ];then
-            excludeStr+=" \) -prune -o ";
+            excludeStr+=" ) -prune -o ";
         else
             excludeStr+=" -o ";
             # excludeStr=${excludeStr}" -path "${excludeStr}" -prune -a ";
@@ -40,10 +41,13 @@ function find_file() {
     done
     # echo $excludeStr;
     # set -x
-    cmd="find $findDir ${excludeStr} -iname \*${fileName}\* "
+    # cmd="find $findDir ${excludeStr} -iname \*${fileName}\* "
     # echo $cmd;
+    # eval $cmd
 
-    eval $cmd
+    find $findDir ${excludeStr} -iname \*${fileName}\*
+    # set +x
+
 }
 
 

@@ -19,7 +19,8 @@ function fun() {
     # 创建一个表 再插入数据
     sql="CREATE TABLE ${dbName}.${newTableName} LIKE ${dbName}.${tableName}; INSERT INTO ${dbName}.${newTableName} SELECT * FROM ${dbName}.${tableName};"
 
-    mysql_connect_db.sh root 123456 "$sql"
+    # mysql_connect_db.sh root 123456 "$sql"
+    mysql_connect_db.sh "$sql"
     if [ $? -eq 0 ];then
         echo "创建成功";
     else

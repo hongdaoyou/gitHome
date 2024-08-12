@@ -28,7 +28,7 @@ function check_match_file() {
 function du_size() {
     
     # 不用,查找大小的路径
-    local noDuFileArr=${noDuFileArr[@]};
+    local noDuFileArr="${noDuFileArr[@]}";
     
     local inputFile=$1
 

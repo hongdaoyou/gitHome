@@ -13,7 +13,8 @@ function fun() {
     
     # echo  $sql;
 
-    mysql_connect_db.sh root 123456  "$sql"
+    # mysql_connect_db.sh root 123456  "$sql"
+    mysql_connect_db.sh   "$sql"
     if [ $? -eq 0 ];then
         echo "清空成功";
     else

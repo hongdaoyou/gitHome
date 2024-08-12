@@ -6,11 +6,14 @@ source common.sh
 # 搜索,某个内容. 并且,排除一些目录
 function grep_text() {
     # 不用匹配的
-    local noMatchDir=$noMatchDir
+    local noMatchDir=("${noMatchDir[@]}")
+
+    # echo ${#noMatchDir}
 
     local excludeStr;
     for file in ${noMatchDir[@]};do
         excludeStr+=" --exclude-dir $file ";
+        # echo $file
     done
 
     if [ $# -lt 2 ];then
@@ -25,7 +28,9 @@ function grep_text() {
     # echo $dirName;
     # echo $textStr;
 
-    grep  -I -r ${excludeStr} "$textStr" ${dirName}
+    # set -x
+    grep  -I -r ${excludeStr} -- "$textStr" ${dirName}
+    # set +x
 
     # local str=$(grep -r ${excludeStr} "$textStr" ${dirName} )
     # echo  $str; 
