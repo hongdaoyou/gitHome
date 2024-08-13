@@ -3,6 +3,7 @@
 # 用法
 #    demo_create.sh php
 
+source common.sh
 # 创建 demo,文件
 function demo_create() {
     if [ $# -eq 0 ] ; then 
@@ -17,36 +18,28 @@ function demo_create() {
     # echo $fileName;
     extensionName=${fileName##*.}
 
-    # 模板,锁在的目录
-    dirName=${gitHome}
+    # echo ${demoFileArr[$extensionName]} ;
+
+    local srcFile;
     
-    # 默认的名字
-    defalutFileName="a-demo."${extensionName}
-    
-    # 默认文件的位置
-    declare -A mapArr;
-    mapArr=(
-        [php]=${dirName}/php/${defalutFileName}
-        [c]=${dirName}/c/${defalutFileName}
-        [cpp]=${dirName}/cpp/${defalutFileName}
-        [js]=${dirName}/js/${defalutFileName}
+    # echo $fileName;
+    # echo ${demoFileArr[sh]};
 
-        [vue]=${dirName}/vue/vite1/src/components/A-demo.vue
+    # 先检查,特殊文件. 再检查,后缀名
+    if [ -n "${demoFileArr[$fileName]}" ];then
+        srcFile="${demoFileArr[$fileName]}/${fileName}"
 
-        [sh]=${dirName}/shell/${defalutFileName}
-        [py]=${dirName}/python/${defalutFileName}
-        [html]=${dirName}/html/${defalutFileName}
-
-    )
-    # echo ${mapArr[$extensionName]} ;
-
-    # if [ ${mapArr[$extensionName]} = '' ];then
-    if [ -z ${mapArr[$extensionName]} ];then
+    elif [ -n "${demoFileArr[$extensionName]}" ];then
+        # 默认的名字
+        defalutFileName="a-demo."${extensionName}
+        
+        srcFile=${demoFileArr[$extensionName]}/$defalutFileName
+    else
         echo "没有这个类型的模板文件"; exit 1;
     fi
 
     # 拷贝
-    cp ${mapArr[$extensionName]} $fileName;
+    cp $srcFile $fileName;
     if [ $? -eq 0 ];then
         echo "拷贝成功";
     else

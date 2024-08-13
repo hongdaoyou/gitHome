@@ -1,5 +1,24 @@
 #!/bin/sh
 
+# demo,模板文件,所在的目录 (后缀名, 特殊的文件)
+declare -A demoFileArr;
+demoFileArr=(
+    [php]=${gitHome}/php
+    [c]=${gitHome}/c
+    [cpp]=${gitHome}/cpp
+    [js]=${gitHome}/js
+
+    [vue]=${gitHome}/vue
+
+    [sh]=${gitHome}/shell
+    [py]=${gitHome}/python
+    [html]=${gitHome}/html
+
+    # 特殊的文件
+    [router.js]=${gitHome}/vue
+    [store.js]=${gitHome}/vue
+)
+
 # 查看文件时, 不用继续深入的目录
 noMatchFileDir=(
     "/bin/"
