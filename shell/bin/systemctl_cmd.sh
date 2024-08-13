@@ -7,22 +7,25 @@ function fun() {
     fi
 
     local service=$1
-    local confirm=$2
+    local cmd=$2
 
-    # systemctl -a | grep  
     local s1=$(systemctl -t service | grep "$service" )
+    if [ -z "$s1" ];then
+        s1=$(systemctl list-unit-files --type=service | grep "$service" )
+    fi
+
     echo $s1;
 
     local serviceName=$(echo $s1 | awk '{print $1}')
     echo $serviceName;
 
-    if [[ -n "$confirm" && "$confirm" -eq 1 ]];then
-        sudo systemctl start $serviceName
+    if [ -n "$cmd" ];then
+        sudo systemctl $cmd $serviceName
         
         if [ $? -eq 0 ];then
-            echo "启动,该服务";
+            echo "已操作成功";
         else
-            echo "启动,失败";
+            echo "停止操作,失败";
         fi
     fi
 }
