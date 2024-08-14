@@ -132,4 +132,6 @@ binPathArr=(
     $gitHome/redis/bin
     $gitHome/mysql/bin
 
+    $gitHome/c/bin
+
 );

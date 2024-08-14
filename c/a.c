@@ -6,6 +6,9 @@ void fun() {
 
     printf("%d\n", 1);
 
+    char *a=NULL;
+
+    // printf("%s\n", a);
 }
 
 
