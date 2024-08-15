@@ -12,6 +12,6 @@ void fun() {
 }
 
 
-int main() {
-    fun();
-}
+//int main() {
+//    fun();
+//}
