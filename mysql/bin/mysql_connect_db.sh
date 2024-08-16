@@ -22,11 +22,12 @@ function connect_db() {
     # 没有参数
     if [  $# -eq 0 ]; then
         # echo "11"
-        mysql -u ${user} -p${passwd}
+        mysql -u ${user} -p${passwd} 2>/dev/null
     else
         # 执行命令
         # echo "22"
-        mysql -u ${user} -p${passwd} -e "$@"
+        # set -x
+        mysql -u ${user} -p${passwd} -e "$@" 2>/dev/null
     fi
 }
 
