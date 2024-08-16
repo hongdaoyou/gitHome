@@ -9,10 +9,11 @@ function fun() {
     port=6379
     passwd=123456
 
-    redis-cli -h $host -p $port $@ 
+    # set -x
+    redis-cli -h $host -p $port $* 
     # redis-cli -h $host -p $port -a $passwd $@ 
 
 }
 
-fun $@
+fun "$*"
 

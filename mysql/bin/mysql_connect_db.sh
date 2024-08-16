@@ -31,5 +31,5 @@ function connect_db() {
     fi
 }
 
-connect_db "$@"
+connect_db "$*"
 
