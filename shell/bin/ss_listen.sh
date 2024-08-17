@@ -9,7 +9,7 @@ function fun() {
     local s1=$1
 
     # ss -ln | grep $s1
-    local ret1=$(sudo ss -lnp | grep -v -E "u_str|u_seq|UNCONN")
+    local ret1=$(sudo ss -lnp | grep -v -E "u_str|u_seq"| tr -s ' ') 
 
     if [ -n "$s1" ];then
         echo "$ret1" | grep $s1

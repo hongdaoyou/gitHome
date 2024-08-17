@@ -17,6 +17,7 @@ demoFileArr=(
     # 特殊的文件
     [router.js]=${gitHome}/vue
     [store.js]=${gitHome}/vue
+    [a-selenium.py]=${gitHome}/python
 )
 
 # 查看文件时, 不用继续深入的目录
@@ -124,6 +125,7 @@ binPathArr=(
     $gitHome/shell/bin
 
     $gitHome/docker/bin
+    $gitHome/k8s/bin
 
     $gitHome/php/bin
 
@@ -133,5 +135,15 @@ binPathArr=(
     $gitHome/mysql/bin
 
     $gitHome/c/bin
+    $gitHome/python/bin
+
+    $gitHome/cpp/bin
+    $gitHome/go/bin
+    $gitHome/html/bin
+    $gitHome/java/bin
+
+    $gitHome/nginx/bin
+
+    $gitHome/vue/bin
 
 );
