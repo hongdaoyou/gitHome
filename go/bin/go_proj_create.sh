@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-function create_go_proj() {
+function fun() {
     proj=$1
     if [ -z $proj ]; then
         echo "请输入,项目名"; exit 1;
@@ -12,6 +12,6 @@ function create_go_proj() {
 }
 
 
-create_go_proj $1
+fun $1
 
 
