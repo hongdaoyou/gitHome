@@ -3,9 +3,12 @@
 
 # 将中文标点符号,转换成,英文的
 function convert_english_symbol() {
+    
     local fileName='';
     local file='';
     # echo $1
+    local flag=${2};
+
 
     # 默认的文件名
     if [ $# -eq 0 ];then
@@ -16,6 +19,7 @@ function convert_english_symbol() {
         fileName=$1;
     fi
     # echo $fileName;
+
 
     # 添加前缀
     if [ -z "$fileName" ];then
@@ -52,10 +56,24 @@ function convert_english_symbol() {
         # echo $key
         # echo ${symbolArr[$key]};
 
-        reStr+="s/$key/${symbolArr[$key]}/g; ";
+        if [ -z "$flag" ];then
+            reStr+="s/$key/${symbolArr[$key]}/g; ";
+        else
+            #  去掉,空格
+            if [ -z "${symbolArr[$key]}" ];then
+                continue
+            fi
 
+            # 只将. 转义
+            if [ "${symbolArr[$key]}" = '.' ];then
+                symbolArr[$key]="\\${symbolArr[$key]}"
+                # echo 'sss';
+            fi
+            reStr+="s/${symbolArr[$key]}/$key/g; ";
+        fi
     done
 
+    # set -x
     sed -i "$reStr" $fileName
     if [ $? -eq 0 ];then
         echo "操作成功";
@@ -67,5 +85,5 @@ function convert_english_symbol() {
 }
 
 
-convert_english_symbol $1
+convert_english_symbol $@
 
