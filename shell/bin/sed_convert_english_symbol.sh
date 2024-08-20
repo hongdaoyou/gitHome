@@ -13,12 +13,14 @@ function convert_english_symbol() {
     # 默认的文件名
     if [ $# -eq 0 ];then
         file="tmp1"
+    elif [[ "$1" =~ ^1 ]];then
+        fileName=~/data/note/疑问3
     elif [[ "$1" =~ ^tmp ]];then  # tmp开头的
         file=$1
     else
         fileName=$1;
     fi
-    # echo $fileName;
+    echo $fileName;
 
 
     # 添加前缀
