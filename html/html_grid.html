@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .container {
+            display: grid;
+            grid-template-columns: 100px 200px 100px;
+            /* grid-template-columns: 1fr 2fr 6fr; */
+            
+            grid-template-rows: 50px 100px;
+            gap:10px;
+        }
+        .item {
+            background-color: red;
+            border: 1px solid black;
+        }
+        .item2 {
+            justify-self: center; 
+            align-self: center; /* 垂直对齐底部 */
+        }
+    </style>
+    
+</head>
+<body>
+    
+    <div class="container">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item item2">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+        
+    </div>
+
+</body>
+
+<script type="text/javascript">
+
+// var obj = document.querySelector("a"); // 返回第一个元素
+// obj.onchange = function (event) {
+//     console.log(this.value); // this,也指向,当前的元素
+
+//     console.log(event.target.value );
+// }
+
+
+class Test {
+    fun() {
+        console.log();
+    }
+}
+
+var obj = new Test();
+obj.fun();
+
+</script>
+
+</html>
