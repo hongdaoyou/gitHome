@@ -12,6 +12,7 @@ function fun() {
     # 查看,全部
     if [ $# -eq 1 ];then
         kubectl get ${type}s
+
     else
         kubectl get ${type} $name
     fi
