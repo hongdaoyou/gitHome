@@ -3,12 +3,14 @@
 # set -x
 # 
 function fun() {
-    if [ $# -lt 1 ];then
-        echo "请输入,参数"; exit 1;
-    fi
-
-    local dir=$1;
+    # if [ $# -lt 1 ];then
+    #     echo "请输入,参数"; exit 1;
+    # fi
+    
+    local dir=${1:-.};
     local pos=$2;
+
+    local d1=$(pwd)
 
     local s1
     if [ -n "$pos" ];then
@@ -21,6 +23,8 @@ function fun() {
     # git diff --name-only --cached
     git diff --name-only $s1
 
+    # 复原
+    cd ${d1}
 }
 
 
