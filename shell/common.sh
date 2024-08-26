@@ -13,6 +13,7 @@ demoFileArr=(
     [sh]=${gitHome}/shell
     [py]=${gitHome}/python
     [html]=${gitHome}/html
+    [md]=${noteDir}
 
     # 特殊的文件
     [router.js]=${gitHome}/vue

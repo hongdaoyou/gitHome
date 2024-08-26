@@ -6,10 +6,11 @@ function fun() {
     if [ $# -lt 1 ];then
         echo "请输入,参数"; exit 1;
     fi
-    # 命名空间
-    local ns=$1
     # 容器
-    local pod=$2
+    local pod=$1
+
+    # 命名空间
+    local ns=${2:-kube-system}
 
 
     # kubectl logs --namespace=kubernetes-dashboard kubernetes-dashboard-779776cb65-wctlm
