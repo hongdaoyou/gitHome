@@ -5,11 +5,11 @@
 # 拷贝文件
 function copy_file_arr() {
     
-    if [ $# -eq 0 ];then
-        echo "请指定,要存储的目录"; exit 1;
-    fi
+    # if [ $# -eq 0 ];then
+    #     echo "请指定,要存储的目录"; exit 1;
+    # fi
     # 待存储的目录
-    dstDir=$1
+    dstDir=${1:-.} # 默认,当前目录
     
     if [ ! -d $dstDir ]; then
         echo "目录,不存在"; exit 1;

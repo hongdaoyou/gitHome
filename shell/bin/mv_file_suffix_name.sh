@@ -1,8 +1,8 @@
 #!/bin/bash
 source common.sh
 
-
-function mv_file_name() {
+# 改变,文件的后缀
+function fun() {
 
     if [ $# -eq 0 ]; then
         echo "请输出参数";exit 1;
@@ -36,5 +36,5 @@ function mv_file_name() {
 }
 
 
-mv_file_name $1 $2
+fun $1 $2
 
