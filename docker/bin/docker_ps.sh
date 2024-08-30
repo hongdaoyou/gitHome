@@ -8,7 +8,7 @@ function docker_ps() {
         # 查看,当前运行的
         sudo docker ps
 
-    elif [ "$container" = "all" ]; then
+    elif [ "$container" = "1" ]; then
         #  查看,所有的容器
         sudo docker ps -a
 

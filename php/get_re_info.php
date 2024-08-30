@@ -10,15 +10,13 @@
 */
 
 class Test {
-    public $fileName = "/home/hdy/data/note/0-wen/0-tmp/tmp4";
+    // public $fileName = "/home/hdy/data/note/0-wen/0-tmp/tmp4";
     // public $fileName = "";
-
-    
     
     public function fun() {
         // 正则字符串
-        $reStr = "//";
-        $reStr = "/\#{6} --(.*)\n```\n{1,}```/";
+        $reStr = "/(\n[^{}\n]{1,}\?\s\n)/";
+        // $reStr = "/\#{6} --(.*)\n```\n{1,}```/";
 
         if ($reStr == "//") {
             echo "正则字符串,为空\n";
@@ -38,8 +36,8 @@ class Test {
         // 处理,第一个分组
         foreach ($matchArr[1] as $item) {
             $str = $item;
-
-            echo $str . "-today-<br>";
+            echo $str;
+            // echo $str . "-today-<br>";
         }
 
         // echo 1;

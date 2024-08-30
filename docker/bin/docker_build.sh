@@ -10,13 +10,13 @@ function fun() {
     local file=$2 # 默认当前目录
 
     if [ -n "$file" ];then
-        file="-f $file"
+        file="-f $file ."
     else
         # 当前目录
         file="."
     fi
     # set -x
-    sudo docker build -t $tag  $file .
+    sudo docker build -t $tag  $file
 
 }
 
