@@ -19,9 +19,9 @@ function fun() {
         s1=$(systemctl list-unit-files --type=service | grep "$service" )
     fi
 
-    echo $s1;
+    echo "$s1";
 
-    local serviceName=$(echo $s1 | awk '{print $1}')
+    local serviceName=$(echo "$s1" | awk 'NR=1{print $1}')
     echo $serviceName;
 
     if [ -n "$cmd" ];then

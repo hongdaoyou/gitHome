@@ -8,7 +8,7 @@ function fun() {
     # fi
     local t1=${1:-`date +'%Y-%m-%d -1day'`}
     
-    set -x
+    # set -x
     git log --after="$t1" --reverse
 
 }
