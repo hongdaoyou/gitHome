@@ -147,4 +147,6 @@ binPathArr=(
 
     $gitHome/vue/bin
 
+    $gitHome/llm/bin
+
 );

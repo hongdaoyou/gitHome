@@ -1,15 +1,15 @@
 #!/bin/bash
 
 # set -x
-# 简单的,拷贝url
+# ollma,下载,大模型
 function fun() {
     if [ $# -lt 1 ];then
         echo "请输入,参数"; exit 1;
     fi
+    local model=$1
 
-    local url=$1;
-    # git clone --depth 1 -b master $url
-    git clone --depth 1  $url
+    # ollama pull qwen:0.5b
+    ollama pull $model
 
 }
 
