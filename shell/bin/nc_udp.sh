@@ -4,18 +4,18 @@
 
 # 创建套接字
 function fun() {
-    if [ $# -lt 3 ];then
+    if [ $# -lt 2 ];then
         echo "请输入参数"; exit 1
     fi
 
-    local type=$1
-    local ip="$2"
-    local port=$3
+    # local type=$1
+    local ip="$1"
+    local port=$2
 
-    if [[ ! "$type" =~ ^(t|u)$ ]];then
-        echo '参数,必须是,t, 或者u'; exit 1
-    fi
-    type="-"$type
+    # if [[ ! "$type" =~ ^(t|u)$ ]];then
+    #     echo '参数,必须是,t, 或者u'; exit 1
+    # fi
+    # type="-"$type
 
     if [ "$ip" = "*" ];then
         ip=''
@@ -33,7 +33,7 @@ function fun() {
     echo "正在打开,监听的端口 "$port
     while true; do
         # set -x
-        local str=$(sudo nc -l $type $ip $port )
+        local str=$(sudo nc -l -u $ip $port )
         # exit 
         echo "接收到: "$str
     done
