@@ -7,11 +7,11 @@ function fun() {
         echo "请输入,参数"; exit 1;
     fi
 
-    local cmd=$1
-    local soft=$2
+    # local cmd=$1
+    local soft=$1
 
     # composer require gokure/hyperf-cors
-    composer $cmd $soft
+    composer remove $soft
 
 }
 
