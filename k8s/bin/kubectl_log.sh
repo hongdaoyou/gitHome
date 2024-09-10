@@ -10,12 +10,14 @@ function fun() {
     local pod=$1
 
     # 命名空间
-    local ns=${2:-kube-system}
+    # local ns=${2:-kube-system}
+    local ns=${2:-default}
 
 
     # kubectl logs --namespace=kubernetes-dashboard kubernetes-dashboard-779776cb65-wctlm
 
-    kubectl logs --namespace=$ns $pod
+    # kubectl logs --namespace=$ns $pod
+    # kubectl logs $pod
 
 
 }
