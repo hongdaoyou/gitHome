@@ -11,5 +11,5 @@ function docker_logs() {
 }
 
 
-docker_logs
+docker_logs "$@"
 
