@@ -8,4 +8,4 @@ source $gitHome/shell/load_shell_path.sh
 
 '''
 
-echo "$a1" >> /etc/profile
+sudo echo "$a1" >> /etc/profile
