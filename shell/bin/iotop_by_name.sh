@@ -3,9 +3,11 @@
 # set -x
 # 查看,某个进程的,读写速度
 function fun() {
-    if [ $# -lt 1 ];then
-        echo "请输入,参数"; exit 1;
+    if [ $# -eq 0 ];then
+        sudo iotop
+        exit 0
     fi
+    
     local name=$1
     local confirm=$2
 
