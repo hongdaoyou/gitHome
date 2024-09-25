@@ -4,7 +4,7 @@
 # 
 function fun() {
     if [ $# -lt 1 ];then
-        echo "请输入,参数"; exit 1;
+        echo "请输入,类似 open-webui/open-webui即可"; exit 1;
     fi
     local name=$1
 
