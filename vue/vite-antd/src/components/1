@@ -1,0 +1,92 @@
+Name:                 kube-apiserver-minikube
+Namespace:            kube-system
+Priority:             2000001000
+Priority Class Name:  system-node-critical
+Node:                 minikube/192.168.59.102
+Start Time:           Mon, 08 Jul 2024 17:59:14 +0800
+Labels:               component=kube-apiserver
+                      tier=control-plane
+Annotations:          kubeadm.kubernetes.io/kube-apiserver.advertise-address.endpoint: 192.168.59.102:8443
+                      kubernetes.io/config.hash: aabda47d0f34dfebbfe3b521c95ce241
+                      kubernetes.io/config.mirror: aabda47d0f34dfebbfe3b521c95ce241
+                      kubernetes.io/config.seen: 2024-07-08T09:59:14.250928489Z
+                      kubernetes.io/config.source: file
+Status:               Running
+SeccompProfile:       RuntimeDefault
+IP:                   192.168.59.102
+IPs:
+  IP:           192.168.59.102
+Controlled By:  Node/minikube
+Containers:
+  kube-apiserver:
+    Container ID:  docker://3c482a2bca9c64b8409965d8e14bf991e0123e6b5b6467e0a7aafce99d0aea1c
+    Image:         registry.cn-hangzhou.aliyuncs.com/google_containers/kube-apiserver:v1.28.3
+    Image ID:      docker-pullable://registry.k8s.io/kube-apiserver@sha256:8db46adefb0f251da210504e2ce268c36a5a7c630667418ea4601f63c9057a2d
+    Port:          <none>
+    Host Port:     <none>
+    Command:
+      kube-apiserver
+      --advertise-address=192.168.59.102
+      --allow-privileged=true
+      --authorization-mode=Node,RBAC
+      --client-ca-file=/var/lib/minikube/certs/ca.crt
+      --enable-admission-plugins=NamespaceLifecycle,LimitRanger,ServiceAccount,DefaultStorageClass,DefaultTolerationSeconds,NodeRestriction,MutatingAdmissionWebhook,ValidatingAdmissionWebhook,ResourceQuota
+      --enable-bootstrap-token-auth=true
+      --etcd-cafile=/var/lib/minikube/certs/etcd/ca.crt
+      --etcd-certfile=/var/lib/minikube/certs/apiserver-etcd-client.crt
+      --etcd-keyfile=/var/lib/minikube/certs/apiserver-etcd-client.key
+      --etcd-servers=https://127.0.0.1:2379
+      --kubelet-client-certificate=/var/lib/minikube/certs/apiserver-kubelet-client.crt
+      --kubelet-client-key=/var/lib/minikube/certs/apiserver-kubelet-client.key
+      --kubelet-preferred-address-types=InternalIP,ExternalIP,Hostname
+      --proxy-client-cert-file=/var/lib/minikube/certs/front-proxy-client.crt
+      --proxy-client-key-file=/var/lib/minikube/certs/front-proxy-client.key
+      --requestheader-allowed-names=front-proxy-client
+      --requestheader-client-ca-file=/var/lib/minikube/certs/front-proxy-ca.crt
+      --requestheader-extra-headers-prefix=X-Remote-Extra-
+      --requestheader-group-headers=X-Remote-Group
+      --requestheader-username-headers=X-Remote-User
+      --secure-port=8443
+      --service-account-issuer=https://kubernetes.default.svc.cluster.local
+      --service-account-key-file=/var/lib/minikube/certs/sa.pub
+      --service-account-signing-key-file=/var/lib/minikube/certs/sa.key
+      --service-cluster-ip-range=10.96.0.0/12
+      --tls-cert-file=/var/lib/minikube/certs/apiserver.crt
+      --tls-private-key-file=/var/lib/minikube/certs/apiserver.key
+    State:          Running
+      Started:      Mon, 08 Jul 2024 17:59:07 +0800
+    Ready:          True
+    Restart Count:  0
+    Requests:
+      cpu:        250m
+    Liveness:     http-get https://192.168.59.102:8443/livez delay=10s timeout=15s period=10s #success=1 #failure=8
+    Readiness:    http-get https://192.168.59.102:8443/readyz delay=0s timeout=15s period=1s #success=1 #failure=3
+    Startup:      http-get https://192.168.59.102:8443/livez delay=10s timeout=15s period=10s #success=1 #failure=24
+    Environment:  <none>
+    Mounts:
+      /etc/ssl/certs from ca-certs (ro)
+      /usr/share/ca-certificates from usr-share-ca-certificates (ro)
+      /var/lib/minikube/certs from k8s-certs (ro)
+Conditions:
+  Type              Status
+  Initialized       True 
+  Ready             True 
+  ContainersReady   True 
+  PodScheduled      True 
+Volumes:
+  ca-certs:
+    Type:          HostPath (bare host directory volume)
+    Path:          /etc/ssl/certs
+    HostPathType:  DirectoryOrCreate
+  k8s-certs:
+    Type:          HostPath (bare host directory volume)
+    Path:          /var/lib/minikube/certs
+    HostPathType:  DirectoryOrCreate
+  usr-share-ca-certificates:
+    Type:          HostPath (bare host directory volume)
+    Path:          /usr/share/ca-certificates
+    HostPathType:  DirectoryOrCreate
+QoS Class:         Burstable
+Node-Selectors:    <none>
+Tolerations:       :NoExecute op=Exists
+Events:            <none>

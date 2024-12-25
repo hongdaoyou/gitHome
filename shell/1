@@ -1,0 +1,92 @@
+  UNIT                                                                                      LOAD   ACTIVE     SUB          DESCRIPTION                                                                  
+  accounts-daemon.service                                                                   loaded active     running      Accounts Service                                                             
+  acpid.service                                                                             loaded active     running      ACPI event daemon                                                            
+  alsa-restore.service                                                                      loaded active     exited       Save/Restore Sound Card State                                                
+  apparmor.service                                                                          loaded active     exited       Load AppArmor profiles                                                       
+  apport.service                                                                            loaded active     exited       LSB: automatic crash report generation                                       
+  avahi-daemon.service                                                                      loaded active     running      Avahi mDNS/DNS-SD Stack                                                      
+  binfmt-support.service                                                                    loaded active     exited       Enable support for additional executable binary formats                      
+  blk-availability.service                                                                  loaded active     exited       Availability of block devices                                                
+  colord.service                                                                            loaded active     running      Manage, Install and Generate Color Profiles                                  
+  console-setup.service                                                                     loaded active     exited       Set console font and keymap                                                  
+  containerd.service                                                                        loaded active     running      containerd container runtime                                                 
+  cron.service                                                                              loaded active     running      Regular background program processing daemon                                 
+  cups-browsed.service                                                                      loaded active     running      Make remote CUPS printers available locally                                  
+  cups.service                                                                              loaded active     running      CUPS Scheduler                                                               
+  dbus.service                                                                              loaded active     running      D-Bus System Message Bus                                                     
+● fwupd-refresh.service                                                                     loaded failed     failed       Refresh fwupd metadata and update motd                                       
+  fwupd.service                                                                             loaded active     running      Firmware update daemon                                                       
+  gdm.service                                                                               loaded active     running      GNOME Display Manager                                                        
+  hddtemp.service                                                                           loaded active     exited       LSB: disk temperature monitoring daemon                                      
+  irqbalance.service                                                                        loaded active     running      irqbalance daemon                                                            
+  kerneloops.service                                                                        loaded active     running      Tool to automatically collect and submit kernel crash signatures             
+  keyboard-setup.service                                                                    loaded active     exited       Set the console keyboard layout                                              
+  kmod-static-nodes.service                                                                 loaded active     exited       Create list of static device nodes for the current kernel                    
+  kubelet.service                                                                           loaded activating auto-restart kubelet: The Kubernetes Node Agent                                           
+  libvirt-guests.service                                                                    loaded active     exited       Suspend/Resume Running libvirt Guests                                        
+  libvirtd.service                                                                          loaded active     running      Virtualization daemon                                                        
+  lm-sensors.service                                                                        loaded active     exited       Initialize hardware monitoring sensors                                       
+  lvm2-monitor.service                                                                      loaded active     exited       Monitoring of LVM2 mirrors, snapshots etc. using dmeventd or progress polling
+  ModemManager.service                                                                      loaded active     running      Modem Manager                                                                
+  mono-xsp4.service                                                                         loaded active     exited       LSB: Mono XSP4                                                               
+  networkd-dispatcher.service                                                               loaded active     running      Dispatcher daemon for systemd-networkd                                       
+  NetworkManager-wait-online.service                                                        loaded active     exited       Network Manager Wait Online                                                  
+  NetworkManager.service                                                                    loaded active     running      Network Manager                                                              
+  nginx.service                                                                             loaded active     running      A high performance web server and a reverse proxy server                     
+  ntp.service                                                                               loaded active     running      Network Time Service                                                         
+  openvpn.service                                                                           loaded active     exited       OpenVPN service                                                              
+  php7.4-fpm.service                                                                        loaded active     running      The PHP 7.4 FastCGI Process Manager                                          
+  polkit.service                                                                            loaded active     running      Authorization Manager                                                        
+  qemu-kvm.service                                                                          loaded active     exited       QEMU KVM preparation - module, ksm, hugepages                                
+  rsyslog.service                                                                           loaded active     running      System Logging Service                                                       
+  rtkit-daemon.service                                                                      loaded active     running      RealtimeKit Scheduling Policy Service                                        
+  setvtrgb.service                                                                          loaded active     exited       Set console scheme                                                           
+  shadowsocks-libev.service                                                                 loaded active     exited       LSB: lightweight secured socks5 proxy                                        
+  shadowsocks.service                                                                       loaded active     exited       LSB: Fast tunnel proxy that helps you bypass firewalls                       
+  snap.cups.cups-browsed.service                                                            loaded active     running      Service for snap application cups.cups-browsed                               
+  snap.cups.cupsd.service                                                                   loaded active     running      Service for snap application cups.cupsd                                      
+  snapd.apparmor.service                                                                    loaded active     exited       Load AppArmor profiles managed internally by snapd                           
+  snapd.seeded.service                                                                      loaded active     exited       Wait until snapd is fully seeded                                             
+  snapd.service                                                                             loaded active     running      Snap Daemon                                                                  
+  ssh.service                                                                               loaded active     running      OpenBSD Secure Shell server                                                  
+  switcheroo-control.service                                                                loaded active     running      Switcheroo Control Proxy service                                             
+  sysstat.service                                                                           loaded active     exited       Resets System Activity Data Collector                                        
+  systemd-backlight@backlight:acpi_video0.service                                           loaded active     exited       Load/Save Screen Backlight Brightness of backlight:acpi_video0               
+  systemd-backlight@backlight:acpi_video1.service                                           loaded active     exited       Load/Save Screen Backlight Brightness of backlight:acpi_video1               
+  systemd-backlight@backlight:intel_backlight.service                                       loaded active     exited       Load/Save Screen Backlight Brightness of backlight:intel_backlight           
+  systemd-backlight@backlight:nv_backlight.service                                          loaded active     exited       Load/Save Screen Backlight Brightness of backlight:nv_backlight              
+  systemd-fsck@dev-disk-by\x2duuid-b7945b3c\x2dcb72\x2d409d\x2d87a3\x2d1e1636da2fba.service loaded active     exited       File System Check on /dev/disk/by-uuid/b7945b3c-cb72-409d-87a3-1e1636da2fba  
+  systemd-journal-flush.service                                                             loaded active     exited       Flush Journal to Persistent Storage                                          
+  systemd-journald.service                                                                  loaded active     running      Journal Service                                                              
+  systemd-logind.service                                                                    loaded active     running      Login Service                                                                
+  systemd-machined.service                                                                  loaded active     running      Virtual Machine and Container Registration Service                           
+  systemd-modules-load.service                                                              loaded active     exited       Load Kernel Modules                                                          
+  systemd-random-seed.service                                                               loaded active     exited       Load/Save Random Seed                                                        
+  systemd-remount-fs.service                                                                loaded active     exited       Remount Root and Kernel File Systems                                         
+  systemd-resolved.service                                                                  loaded active     running      Network Name Resolution                                                      
+  systemd-sysctl.service                                                                    loaded active     exited       Apply Kernel Variables                                                       
+  systemd-sysusers.service                                                                  loaded active     exited       Create System Users                                                          
+  systemd-tmpfiles-setup-dev.service                                                        loaded active     exited       Create Static Device Nodes in /dev                                           
+  systemd-tmpfiles-setup.service                                                            loaded active     exited       Create Volatile Files and Directories                                        
+  systemd-udev-trigger.service                                                              loaded active     exited       udev Coldplug all Devices                                                    
+  systemd-udevd.service                                                                     loaded active     running      udev Kernel Device Manager                                                   
+  systemd-update-utmp.service                                                               loaded active     exited       Update UTMP about System Boot/Shutdown                                       
+  systemd-user-sessions.service                                                             loaded active     exited       Permit User Sessions                                                         
+  thermald.service                                                                          loaded active     running      Thermal Daemon Service                                                       
+  udisks2.service                                                                           loaded active     running      Disk Manager                                                                 
+  uml-utilities.service                                                                     loaded active     running      LSB: start and stop UML networking services                                  
+  unattended-upgrades.service                                                               loaded active     running      Unattended Upgrades Shutdown                                                 
+  upower.service                                                                            loaded active     running      Daemon for power management                                                  
+  user-runtime-dir@1000.service                                                             loaded active     exited       User Runtime Directory /run/user/1000                                        
+  user@1000.service                                                                         loaded active     running      User Manager for UID 1000                                                    
+  v2raya.service                                                                            loaded active     running      v2rayA Service                                                               
+  virtualbox.service                                                                        loaded active     exited       LSB: VirtualBox Linux kernel module                                          
+  whoopsie.service                                                                          loaded active     running      crash report submission daemon                                               
+  wpa_supplicant.service                                                                    loaded active     running      WPA supplicant                                                               
+
+LOAD   = Reflects whether the unit definition was properly loaded.
+ACTIVE = The high-level unit activation state, i.e. generalization of SUB.
+SUB    = The low-level unit activation state, values depend on unit type.
+
+84 loaded units listed. Pass --all to see loaded but inactive units, too.
+To show all installed unit files use 'systemctl list-unit-files'.

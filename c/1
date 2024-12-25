@@ -1,0 +1,67 @@
+Name:             kubernetes-dashboard-779776cb65-zt7s7
+Namespace:        kubernetes-dashboard
+Priority:         0
+Service Account:  kubernetes-dashboard
+Node:             minikube/192.168.59.107
+Start Time:       Mon, 26 Aug 2024 08:02:14 +0800
+Labels:           gcp-auth-skip-secret=true
+                  k8s-app=kubernetes-dashboard
+                  pod-template-hash=779776cb65
+Annotations:      <none>
+Status:           Pending
+IP:               10.244.0.5
+IPs:
+  IP:           10.244.0.5
+Controlled By:  ReplicaSet/kubernetes-dashboard-779776cb65
+Containers:
+  kubernetes-dashboard:
+    Container ID:  
+    Image:         docker.io/kubernetesui/dashboard:v2.7.0@sha256:2e500d29e9d5f4a086b908eb8dfe7ecac57d2ab09d65b24f588b1d449841ef93
+    Image ID:      
+    Port:          9090/TCP
+    Host Port:     0/TCP
+    Args:
+      --namespace=kubernetes-dashboard
+      --enable-skip-login
+      --disable-settings-authorizer
+    State:          Waiting
+      Reason:       ImagePullBackOff
+    Ready:          False
+    Restart Count:  0
+    Liveness:       http-get http://:9090/ delay=30s timeout=30s period=10s #success=1 #failure=3
+    Environment:    <none>
+    Mounts:
+      /tmp from tmp-volume (rw)
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-9kdbh (ro)
+Conditions:
+  Type                        Status
+  PodReadyToStartContainers   True 
+  Initialized                 True 
+  Ready                       False 
+  ContainersReady             False 
+  PodScheduled                True 
+Volumes:
+  tmp-volume:
+    Type:       EmptyDir (a temporary directory that shares a pod's lifetime)
+    Medium:     
+    SizeLimit:  <unset>
+  kube-api-access-9kdbh:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    ConfigMapOptional:       <nil>
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              kubernetes.io/os=linux
+Tolerations:                 node-role.kubernetes.io/master:NoSchedule
+                             node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type     Reason     Age                    From               Message
+  ----     ------     ----                   ----               -------
+  Normal   Scheduled  6m32s                  default-scheduler  Successfully assigned kubernetes-dashboard/kubernetes-dashboard-779776cb65-zt7s7 to minikube
+  Warning  Failed     3m37s                  kubelet            Failed to pull image "docker.io/kubernetesui/dashboard:v2.7.0@sha256:2e500d29e9d5f4a086b908eb8dfe7ecac57d2ab09d65b24f588b1d449841ef93": error pulling image configuration: download failed after attempts=6: dial tcp 108.160.165.139:443: i/o timeout
+  Warning  Failed     3m37s                  kubelet            Error: ErrImagePull
+  Normal   BackOff    3m36s                  kubelet            Back-off pulling image "docker.io/kubernetesui/dashboard:v2.7.0@sha256:2e500d29e9d5f4a086b908eb8dfe7ecac57d2ab09d65b24f588b1d449841ef93"
+  Warning  Failed     3m36s                  kubelet            Error: ImagePullBackOff
+  Normal   Pulling    3m22s (x2 over 6m31s)  kubelet            Pulling image "docker.io/kubernetesui/dashboard:v2.7.0@sha256:2e500d29e9d5f4a086b908eb8dfe7ecac57d2ab09d65b24f588b1d449841ef93"

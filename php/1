@@ -1,0 +1,63 @@
+00:00.0 Host bridge: Intel Corporation 3rd Gen Core processor DRAM Controller (rev 09)
+	Subsystem: Lenovo 3rd Gen Core processor DRAM Controller
+	Kernel driver in use: ivb_uncore
+00:01.0 PCI bridge: Intel Corporation Xeon E3-1200 v2/3rd Gen Core processor PCI Express Root Port (rev 09)
+	Kernel driver in use: pcieport
+00:02.0 VGA compatible controller: Intel Corporation 3rd Gen Core processor Graphics Controller (rev 09)
+	Subsystem: Lenovo 3rd Gen Core processor Graphics Controller
+	Kernel driver in use: i915
+	Kernel modules: i915
+00:14.0 USB controller: Intel Corporation 7 Series/C210 Series Chipset Family USB xHCI Host Controller (rev 04)
+	Subsystem: Lenovo ThinkPad T430
+	Kernel driver in use: xhci_hcd
+00:16.0 Communication controller: Intel Corporation 7 Series/C216 Chipset Family MEI Controller #1 (rev 04)
+	Subsystem: Lenovo 7 Series/C216 Chipset Family MEI Controller
+	Kernel driver in use: mei_me
+	Kernel modules: mei_me
+00:19.0 Ethernet controller: Intel Corporation 82579LM Gigabit Network Connection (Lewisville) (rev 04)
+	Subsystem: Lenovo 82579LM Gigabit Network Connection (Lewisville)
+	Kernel driver in use: e1000e
+	Kernel modules: e1000e
+00:1a.0 USB controller: Intel Corporation 7 Series/C216 Chipset Family USB Enhanced Host Controller #2 (rev 04)
+	Subsystem: Lenovo 7 Series/C216 Chipset Family USB Enhanced Host Controller
+	Kernel driver in use: ehci-pci
+00:1b.0 Audio device: Intel Corporation 7 Series/C216 Chipset Family High Definition Audio Controller (rev 04)
+	Subsystem: Lenovo 7 Series/C216 Chipset Family High Definition Audio Controller
+	Kernel driver in use: snd_hda_intel
+	Kernel modules: snd_hda_intel
+00:1c.0 PCI bridge: Intel Corporation 7 Series/C216 Chipset Family PCI Express Root Port 1 (rev c4)
+	Kernel driver in use: pcieport
+00:1c.1 PCI bridge: Intel Corporation 7 Series/C210 Series Chipset Family PCI Express Root Port 2 (rev c4)
+	Kernel driver in use: pcieport
+00:1c.2 PCI bridge: Intel Corporation 7 Series/C210 Series Chipset Family PCI Express Root Port 3 (rev c4)
+	Kernel driver in use: pcieport
+00:1d.0 USB controller: Intel Corporation 7 Series/C216 Chipset Family USB Enhanced Host Controller #1 (rev 04)
+	Subsystem: Lenovo 7 Series/C216 Chipset Family USB Enhanced Host Controller
+	Kernel driver in use: ehci-pci
+00:1f.0 ISA bridge: Intel Corporation QM77 Express Chipset LPC Controller (rev 04)
+	Subsystem: Lenovo QM77 Express Chipset LPC Controller
+	Kernel driver in use: lpc_ich
+	Kernel modules: lpc_ich
+00:1f.2 SATA controller: Intel Corporation 7 Series Chipset Family 6-port SATA Controller [AHCI mode] (rev 04)
+	Subsystem: Lenovo 7 Series Chipset Family 6-port SATA Controller [AHCI mode]
+	Kernel driver in use: ahci
+	Kernel modules: ahci
+00:1f.3 SMBus: Intel Corporation 7 Series/C216 Chipset Family SMBus Controller (rev 04)
+	Subsystem: Lenovo 7 Series/C216 Chipset Family SMBus Controller
+	Kernel driver in use: i801_smbus
+	Kernel modules: i2c_i801
+01:00.0 VGA compatible controller: NVIDIA Corporation GF108M [NVS 5400M] (rev a1)
+	Subsystem: Lenovo GF108M [NVS 5400M]
+	Kernel modules: nvidiafb, nouveau, nvidia_drm, nvidia
+01:00.1 Audio device: NVIDIA Corporation GF108 High Definition Audio Controller (rev a1)
+	Subsystem: Lenovo GF108 High Definition Audio Controller
+	Kernel driver in use: snd_hda_intel
+	Kernel modules: snd_hda_intel
+02:00.0 System peripheral: Ricoh Co Ltd PCIe SDXC/MMC Host Controller (rev 07)
+	Subsystem: Lenovo PCIe SDXC/MMC Host Controller
+	Kernel driver in use: sdhci-pci
+	Kernel modules: sdhci_pci
+03:00.0 Network controller: Intel Corporation Centrino Advanced-N 6205 [Taylor Peak] (rev 34)
+	Subsystem: Intel Corporation Centrino Advanced-N 6205 (802.11a/b/g/n)
+	Kernel driver in use: iwlwifi
+	Kernel modules: iwlwifi
