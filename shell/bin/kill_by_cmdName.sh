@@ -13,7 +13,7 @@ function kill_by_cmdName() {
     # 排除掉 grep. xargs,转换成,命令行参数, 然后,杀死
     str=`ps -ef | grep $cmdName  | grep -v "grep" | grep -v "kill_by_cmdName.sh" `
     if [  "$str" = "" ];then
-        echo "未找到,该进程";
+        echo "未找到,该进程 $cmdName";
     else
         echo "$str";
     fi

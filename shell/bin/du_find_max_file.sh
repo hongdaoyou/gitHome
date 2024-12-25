@@ -72,7 +72,6 @@ function find_max_file_real() {
         return
     fi
 
-    
     # 遍历目录  如果文件,是目录,那么,继续递归
     for file in "$fileName"*; do
         # echo $file;
@@ -132,7 +131,11 @@ function find_max_file() {
 
 t1=$(date +"%s")
 
-find_max_file $1
+fileName=$1
+if [ -d "$fileName" ]; then
+    fileName="$fileName"/
+fi
+find_max_file $fileName
 
 t2=$(date +"%s")
 

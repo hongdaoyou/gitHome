@@ -38,5 +38,5 @@ function grep_text() {
     # cat ~/1
 }
 
-grep_text $1 $2
+grep_text "$1" "$2"
 

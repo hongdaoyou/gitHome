@@ -70,6 +70,7 @@ logFileArr=(
 
     # 包含登录信息
     "/var/log/wtmp"
+    "/var/log/btmp"
 
     # 包含,用户登录失败信息
     "/var/log/faillog"

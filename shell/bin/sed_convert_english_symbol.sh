@@ -16,9 +16,9 @@ function convert_english_symbol() {
     elif [[ "$1" =~ ^1 ]];then
         fileName=~/data/note/疑问3
     elif [[ "$1" =~ ^tmp ]];then  # tmp开头的
-        file=$1
+        file="$1"
     else
-        fileName=$1;
+        fileName="$1";
     fi
     echo $fileName;
 
@@ -46,6 +46,8 @@ function convert_english_symbol() {
 
         ['“']='"'
         ['”']='"'
+        ['’']="'"
+
         ['　']=' '
         
         # ['']=''
@@ -87,5 +89,5 @@ function convert_english_symbol() {
 }
 
 
-convert_english_symbol $@
+convert_english_symbol "$@"
 
