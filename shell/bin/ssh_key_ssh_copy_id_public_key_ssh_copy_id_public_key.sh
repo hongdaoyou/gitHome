@@ -18,7 +18,7 @@ function ssh_copy_id_public_key() {
         echo "该文件,不存在"; exit 1;
     fi
 
-    ssh-copy-id -i $fileName -p $port $url
+    ssh-copy-id -i $fileName -p $port $url -o PubkeyAuthentication=no
 
 }
 

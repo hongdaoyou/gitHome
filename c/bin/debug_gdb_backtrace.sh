@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # set -x
-function gdb_backtrace() {
+function fun() {
     if [ $# -lt 1 ];then
         echo "请输入,参数"; exit 1;
     fi
@@ -16,5 +16,5 @@ function gdb_backtrace() {
 }
 
 
-gdb_backtrace "$@"
+fun "$@"
 

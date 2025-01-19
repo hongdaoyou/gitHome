@@ -8,14 +8,17 @@ function fun() {
     fi
 
     local url=$1
+    local port=${2:-22}
+
+    shift
     shift
     local cmd="$*"
 
-    # 登录,并进行操作
+    # # 登录,并进行操作
     if [ -n "$cmd" ];then
-        echo "$cmd" | sftp $url
+        echo "$cmd" | sftp -P $port $url
     else
-        sftp $url
+        sftp -P $port $url
     fi
 
 }

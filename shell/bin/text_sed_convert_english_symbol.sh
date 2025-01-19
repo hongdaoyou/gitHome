@@ -2,7 +2,7 @@
 # set -x
 
 # 将中文标点符号,转换成,英文的
-function convert_english_symbol() {
+function fun() {
     
     local fileName='';
     local file='';
@@ -26,6 +26,10 @@ function convert_english_symbol() {
     # 添加前缀
     if [ -z "$fileName" ];then
         fileName=$noteDir/0-wen/0-tmp/"$file";
+    fi
+
+    if [ ! -e $fileName ];then
+        echo "文件,不存在"; exit 1;
     fi
 
     declare -A symbolArr=(
@@ -89,5 +93,5 @@ function convert_english_symbol() {
 }
 
 
-convert_english_symbol "$@"
+fun "$@"
 

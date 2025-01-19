@@ -39,7 +39,7 @@ function demo_create() {
     fi
 
     # 拷贝
-    cp $srcFile $fileName;
+    cp -- $srcFile $fileName;
     if [ $? -eq 0 ];then
         echo "拷贝成功";
     else

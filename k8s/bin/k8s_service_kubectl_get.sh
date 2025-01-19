@@ -8,7 +8,9 @@ function fun() {
     # fi
     # local s=$1
     
-    kubectl get services
+    local name=$1
+
+    kubectl get services $name
 
 }
 

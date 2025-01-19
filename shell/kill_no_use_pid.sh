@@ -9,6 +9,8 @@ function fun() {
         'packagekitd'
         'apt-check'
         'wpsoffice /qingbangong'
+        'nautilus'
+        'gnome-software'
     )
     local ret;
     
