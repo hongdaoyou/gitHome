@@ -13,7 +13,7 @@ function fun() {
     # ffmpeg -i demo.mp4
     if [ $# -eq 1 ];then
         ffmpeg -i $file
-    elif [ $# -eq 1 ];then
+    elif [ $# -eq 2 ];then
         ffmpeg -i $file $dst
 
     fi

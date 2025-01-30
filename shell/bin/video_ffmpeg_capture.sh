@@ -16,7 +16,9 @@ function fun() {
 
 
     # ffmpeg -f x11grab -framerate 25 -video_size 1600x900 -i :0.0 output.mp4
-    ffmpeg -f x11grab -framerate 25 -video_size $size -i :0.0 $file &>/dev/null
+    # ffmpeg -f x11grab -framerate 25 -video_size $size -i :0.0 $file &>/dev/null
+
+    ffmpeg -f x11grab -framerate 25 -video_size $size -i :0.0  -f pulse -i default -c:v libx264 -c:a aac -strict experimental -preset ultrafast $file &>/dev/null
 
 }
 

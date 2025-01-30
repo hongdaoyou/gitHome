@@ -22,6 +22,7 @@ function fun() {
     cd $dir
     # git diff --name-only --cached
     git diff --name-only $s1
+    # git diff --name-status $s1
 
     # 复原
     cd ${d1}
