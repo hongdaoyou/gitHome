@@ -7,8 +7,10 @@ function fun() {
         echo "请输入,参数"; exit 1;
     fi
     local s=$1
-    
-    type $s
+    # echo $s
+    # type proxy_export
+
+    bash -i -c "type $s"
 }
 
 
