@@ -21,10 +21,10 @@ function fun() {
 
 
     # 发送完,立马,就结束
-    local optStr=" -N ";
+    local optStr=" -z ";
 
     set -x
-    echo "$msg" | nc $optStr -u $ip $port
+    echo "$msg\n" | nc $optStr -u $ip $port
 
 }
 

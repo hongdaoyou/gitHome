@@ -31,13 +31,14 @@ function fun() {
     # 执行命令
     # $( sudo nc $optStr ) 
     echo "正在打开,监听的端口 "$port
-    while true; do
-        # set -x
-        local str=$(sudo nc -l -t $ip $port )
-        # exit 
-        echo "接收到: "$str
-    done
+    # while true; do
+    #     # set -x
+    #     local str=$(sudo nc -l -t $ip $port )
+    #     # exit 
+    #     echo "接收到: "$str
+    # done
     
+    sudo nc -k -l -t $ip $port
 }
 
 fun "$@"
