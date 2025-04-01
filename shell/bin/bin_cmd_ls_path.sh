@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-function ls_cmd() {
+function fun() {
     if [ $# -eq 0 ];then
         echo "请输入,要查找的文件名"; exit 1;
     fi
@@ -33,6 +33,6 @@ function ls_cmd() {
 }
 
 
-ls_cmd $1
+fun $1
 
 

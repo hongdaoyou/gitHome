@@ -3,8 +3,8 @@
 
 class Test {
     public function fun() {
-        $path = '/var/www/html';
-        
+        // $path = '/var/www/html';
+
         $level = 5;
         $this->loop_dir($path ,$level);
         
@@ -34,8 +34,17 @@ class Test {
             $file = $path . '/' .$value;
             if (! is_dir($file) ) {
                 // 文件
-                
-                echo 'File: ' . $file . "<br>\n";
+                $s1 = file_get_contents($file);
+
+                $reStr1 = "/豆瓣评分:(.+)\n/";
+                $ret = preg_match($reStr1, $s1, $matchArr);
+                if ($ret) {
+                    // var_dump($matchArr[1]);
+                    if ($matchArr[1] >= 8.5) {
+                        echo "$value\n";
+                    }
+                }
+                // echo 'File: ' . $file . "<br>\n";
                 continue;
             
             } else {
@@ -46,6 +55,20 @@ class Test {
             }
         }
     } // end of loop_dir
+    
+    // 打开文件,匹配文件
+    function  file() {
+        $s1 = file_get_contents($file);
+
+        $reStr1 = "/豆瓣评分:(.+)\n/";
+        $ret = preg_match($reStr1, $s1, $matchArr);
+        if ($ret) {
+            // var_dump($matchArr[1]);
+            if ($matchArr[1] >= 8) {
+                echo "$value\n";
+            }
+        }
+    }
 }
 
 (new Test())->fun();
