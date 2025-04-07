@@ -1,13 +1,14 @@
 #!/bin/bash
 
-# set -x
+set -x
 # 录屏
 function fun() {
     # if [ $# -lt 1 ];then
     #     echo "请输入,参数"; exit 1;
     # fi
     
-    local file=${1:-output.mp4}
+    local file=${1:-output-$(date +%s).mp4}
+
     if [ -f "$file" ]; then
         echo "$file 文件,已存在; "; exit 1
     fi

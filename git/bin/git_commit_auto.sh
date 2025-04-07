@@ -1,5 +1,6 @@
 #!/bin/bash
 # 自动提交
+# echo -e "aaaaaaa111\n";
 
 # 默认,提交到 gitHome. 否则,提交到,指定的目录
 if [ $# -eq 0 ];then
@@ -31,6 +32,8 @@ fi
 
 
 git add .
+
+# echo -e "aaaaaaa222\n";
 
 git commit -m ${msg}
 
