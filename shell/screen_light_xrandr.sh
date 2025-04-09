@@ -8,7 +8,9 @@ function fun() {
     # fi
     local num=${1:-1.7}
 
-    xrandr --output LVDS-1 --brightness $num
+    local screenName=$(xrandr --query | grep connected | awk '{print $1}')
+    xrandr --output $screenName --brightness $num
+    # xrandr --output LVDS-1 --brightness $num
 
 }
 
