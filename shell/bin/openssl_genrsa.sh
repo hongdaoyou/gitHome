@@ -7,7 +7,7 @@ function fun() {
         echo "请输入,参数"; exit 1;
     fi
     # 文件名
-    local fileName=$1
+    local fileName=$1.key
     # 大小
     local num=${2:-2048}
 
@@ -21,7 +21,9 @@ function fun() {
     echo $fileName
 
     # 公钥文件名
-    local publicName=${fileName%.*}-pub.${fileName##*.}
+    # local publicName=${fileName%.*}-pub.${fileName##*.}
+    local publicName=${fileName%.*}.pub
+    
     echo $publicName
     
     # 生成公钥

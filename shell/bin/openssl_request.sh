@@ -7,7 +7,8 @@ function fun() {
         echo "请输入,参数"; exit 1;
     fi
     local key=${1:-server.key}
-    if [ -f "$key" ];then
+    # echo $key
+    if [ ! -f "$key" ];then
         echo "私钥文件,不存在"; exit 1;
     fi
 
