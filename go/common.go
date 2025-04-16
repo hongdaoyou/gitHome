@@ -1,3 +1,4 @@
+package main
 
 const DEUBG_FLAG = true;
 

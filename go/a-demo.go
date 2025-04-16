@@ -1,19 +1,25 @@
 package main
 
 import (
-	"fmt"
-
+    "fmt"
+    "os"
+    "log"
 )
 
 func fun() {
+    // time.Sleep(2 * time.Second)
+    a1 := ""
 
 
-	fmt.Println("")
+    fmt.Println(a1)
+
 }
 
 func main() {
-	fun()
-	
-	fmt.Printf("")
+    fun()
+
+    fmt.Printf("")
+    log.Fatal("")
+    os.Exit(0)
 }
 

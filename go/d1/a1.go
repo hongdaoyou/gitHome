@@ -1,11 +1,10 @@
-package main
+package d1
 
 import (
 	"fmt"
-
 )
 
-func Fun1() {
+func Fun2() {
 
 	fmt.Println("1sss")
 }
