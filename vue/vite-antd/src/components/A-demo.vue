@@ -10,7 +10,6 @@ AA
 <script setup>
 
 import { ref } from "vue";
-import * as vue from "vue";
 
 let a = ref(0);
 

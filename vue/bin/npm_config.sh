@@ -10,7 +10,7 @@ function fun() {
     local value=$2
 
 	# npm install -g cnpm --registry=https://registry.npm.taobao.org/
-	local s1=$(npm config list)
+	local s1=$(npm config list -l)
 
     if [ -n "$key" ];then
         echo "$s1" | grep "$key"

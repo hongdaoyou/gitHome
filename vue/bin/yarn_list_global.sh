@@ -12,7 +12,7 @@ function fun() {
     #     globalStr="-g"
     # fi
 
-    yarn list
+    yarn global list
 
 }
 

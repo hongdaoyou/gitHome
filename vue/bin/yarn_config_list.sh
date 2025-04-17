@@ -1,18 +1,15 @@
 #!/bin/bash
 
-set -x
-# 
+# set -x
+# 列出,yarn 的配置
 function fun() {
     # if [ $# -lt 1 ];then
     #     echo "请输入,参数"; exit 1;
     # fi
+    # local s=$1
 
-    # local globalStr=''
-    # if [ -n "$1" ];then
-    #     globalStr="-g"
-    # fi
+    yarn config list
 
-    yarn list
 
 }
 
