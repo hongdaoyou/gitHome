@@ -11,22 +11,21 @@ function fun() {
 
 
     # 默认的文件名
-    if [ $# -eq 0 ];then
-        file="tmp1"
-    elif [[ "$1" =~ ^1 ]];then
+    if [[  $# -eq 0  ]];then
         fileName=~/data/note/疑问3
     elif [[ "$1" =~ ^tmp ]];then  # tmp开头的
         file="$1"
     else
         fileName="$1";
     fi
-    echo $fileName;
+    # echo $fileName;
 
 
     # 添加前缀
     if [ -z "$fileName" ];then
         fileName=$noteDir/0-wen/0-tmp/"$file";
     fi
+    echo $fileName;
 
     if [ ! -e $fileName ];then
         echo "文件,不存在"; exit 1;

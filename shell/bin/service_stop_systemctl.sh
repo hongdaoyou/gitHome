@@ -17,11 +17,16 @@ function fun() {
     if [ -z "$s1" ];then
         s1=$(systemctl list-unit-files --type=service | grep "$service" )
     fi
-
-    echo "$s1";
+    # echo "$s1";
+    if [ -z "$s1" ]; then
+        echo "未找到"; exit 1;
+    fi
 
     local serviceName=$(echo "$s1" | awk 'NR=1{print $1}')
     echo $serviceName;
+    if [ -z "$serviceName" ]; then
+        echo "未找到"; exit 1;
+    fi
 
     sudo systemctl stop $serviceName
     
