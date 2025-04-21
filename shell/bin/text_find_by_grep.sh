@@ -4,7 +4,7 @@ source common.sh
 # set -x
 
 # 搜索,某个内容. 并且,排除一些目录
-function grep_text() {
+function fun() {
     # 不用匹配的
     local noMatchDir=("${noMatchDir[@]}")
 
@@ -16,13 +16,13 @@ function grep_text() {
         # echo $file
     done
 
-    if [ $# -lt 2 ];then
+    if [ $# -lt 1 ];then
         echo "参数,不够"; exit 1;
     fi
 
     # 先内容, 后文件名
     textStr=$1
-    dirName=$2
+    dirName=${2:-.}
 
     # echo $excludeStr;
     # echo $dirName;
@@ -38,5 +38,5 @@ function grep_text() {
     # cat ~/1
 }
 
-grep_text "$1" "$2"
+fun "$1" "$2"
 

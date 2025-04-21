@@ -8,7 +8,7 @@ function fun() {
     fi
     local soft=$1
 
-    pip3 install $soft
+    pip install $soft
 
 }
 

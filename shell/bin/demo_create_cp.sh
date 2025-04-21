@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # 用法
-#    demo_create.sh php
+#    demo_create.sh a.php
 
 source common.sh
 # 创建 demo,文件

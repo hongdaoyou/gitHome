@@ -6,13 +6,14 @@ demoFileArr=(
     [php]=${gitHome}/php
     [c]=${gitHome}/c
     [cpp]=${gitHome}/cpp
-    [js]=${gitHome}/js
 
     [vue]=${gitHome}/vue
 
     [sh]=${gitHome}/shell
     [py]=${gitHome}/python
     [html]=${gitHome}/html
+    [go]=${gitHome}/go
+
     [md]=${noteDir}
 
     # 特殊的文件
