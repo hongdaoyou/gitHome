@@ -1,5 +1,5 @@
 
-public class Test {
+public class A {
     void fun() {
 
         System.out.println(1);
@@ -7,8 +7,8 @@ public class Test {
 
     public static void main(String[] args) {
     
-        Test test = new Test();
-        test.fun()
+        A obj = new A();
+        obj.fun();
     }
 
 }

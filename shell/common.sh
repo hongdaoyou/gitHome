@@ -14,6 +14,8 @@ demoFileArr=(
     [html]=${gitHome}/html
     [go]=${gitHome}/go
 
+    [js]=${gitHome}/js
+
     [md]=${noteDir}
 
     # 特殊的文件
