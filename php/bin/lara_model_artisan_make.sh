@@ -14,7 +14,7 @@ function fun() {
     # fi
 
     # php artisan make:controller UserController:
-    php artisan make:model $name:
+    php artisan make:model $name
 
 
 }

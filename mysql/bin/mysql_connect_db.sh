@@ -6,6 +6,8 @@ function connect_db() {
     # 默认的,用户名,密码
     local user="root";
     local passwd="123456";
+    # local user="hdy";
+    # local passwd="123456";
 
     # if [ $# -eq 2 ]; then
     #     if [ -n "$1" ];then

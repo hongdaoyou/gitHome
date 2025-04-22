@@ -12,7 +12,7 @@ function fun() {
 
     # php think make:controller m1/A1
 
-    php think controller $className
+    php think make:controller $className
 
 }
 

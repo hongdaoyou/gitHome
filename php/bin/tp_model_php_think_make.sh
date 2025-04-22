@@ -11,10 +11,12 @@ function fun() {
 
     # php think make:controller m1/A1
 
-    php think model $className
+    php think make:model $className
 
 }
 
 
 fun "$@"
+
+
 
