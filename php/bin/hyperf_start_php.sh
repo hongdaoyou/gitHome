@@ -8,12 +8,14 @@ function fun() {
     # fi
     local flag=$1
     
-    if [ -n "$flag" ];then
     	php bin/hyperf.php server:watch
+    
+    # if [ -n "$flag" ];then
+    # 	php bin/hyperf.php server:watch
 
-    else
-        php bin/hyperf.php start
-    fi
+    # else
+    #     php bin/hyperf.php start
+    # fi
 
 }
 
