@@ -8,7 +8,10 @@ function fun() {
     # fi
     local s=$1
 
-    pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
+    # pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
+    pip config set global.index-url https://mirrors.aliyun.com/pypi/simple
+
+
 
 }
 
