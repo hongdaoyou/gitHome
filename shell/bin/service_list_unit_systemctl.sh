@@ -9,16 +9,24 @@ function fun() {
     local service=$1
 
     if [ -z "$service" ];then
-        systemctl --state=running
+        # 列出,所有的
+        systemctl --state=running 
         exit
     fi
 
+    # 为了,获取,其全称的名字
     local s1=$(systemctl -t service | grep "$service" )
     if [ -z "$s1" ];then
         s1=$(systemctl list-unit-files --type=service | grep "$service" )
     fi
 
-    echo "$s1";
+    if [ -n "$s1" ];then
+        systemctl status $(echo $s1 | awk NR=1'{print $1}')
+    else
+        echo "没找到"
+    fi
+
+    # echo "$s1";
 
 }
 
