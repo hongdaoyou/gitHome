@@ -7,9 +7,7 @@ function fun() {
 # #    a=$(cat)
 #     echo "A1:"$a
 
-    cd /home
 }
-
 
 fun
 

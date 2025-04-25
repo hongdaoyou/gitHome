@@ -15,9 +15,9 @@ function fun() {
     fi
 
     # 为了,获取,其全称的名字
-    local s1=$(systemctl -t service | grep "$service" )
+    local s1=$(systemctl -t service | grep -i "$service" )
     if [ -z "$s1" ];then
-        s1=$(systemctl list-unit-files --type=service | grep "$service" )
+        s1=$(systemctl list-unit-files --type=service | grep  -i "$service" )
     fi
 
     if [ -n "$s1" ];then

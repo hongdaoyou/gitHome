@@ -7,7 +7,21 @@ function fun() {
         sudo iotop
         exit 0
     fi
-    
+    local soft=$1
+    pidArr=$(pgrep -i -d ' ' $soft)
+
+    local opt;
+    for val in ${pidArr[@]}; do
+        echo $val
+        opt+=" -p "$val
+    done
+    # echo $opt
+    sudo iotop $opt
+
+    exit 0;
+
+
+    # 以下的操作,没啥用了
     local name=$1
     local confirm=$2
 

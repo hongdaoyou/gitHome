@@ -8,7 +8,7 @@ function fun() {
     # fi
     local soft="$*"
 
-    sudo pip install $soft --break-system-packages --ignore-installed
+    sudo pip install $soft --break-system-packages -i https://mirrors.aliyun.com/pypi/simple  --ignore-installed
 
 
 }
