@@ -1,18 +1,15 @@
 #!/bin/bash
 
 # set -x
-# 创建,模块
+# 查看,包含,内容的 文件
 function fun() {
     # if [ $# -lt 1 ];then
     #     echo "请输入,参数"; exit 1;
     # fi
+    
+    local s1=$1
 
-    local mod=${1:-hdy}
-
-    # go mod init d1
-
-    go mod init $mod
-
+    git grep -i  "$s1"
 }
 
 

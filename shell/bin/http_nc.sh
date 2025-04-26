@@ -8,18 +8,21 @@ function fun() {
     fi
     local ip=$1
     local port=$2
-    local file=$3
 
-    if [ -z "$file" ];then
-        # telnet localhost 80
-        telnet $ip $port
-    else
-        if [ ! -f "$file" ];then
-            echo "文件不存在"; exit 1
-        fi
-        set -x
-        cat $file | nc $ip $port
-    fi
+    local s1=$(cat)
+
+    echo $s1 | nc $ip $port
+
+    # if [ -z "$file" ];then
+    #     # telnet localhost 80
+    #     telnet $ip $port
+    # else
+    #     if [ ! -f "$file" ];then
+    #         echo "文件不存在"; exit 1
+    #     fi
+    #     set -x
+    #     cat $file | nc $ip $port
+    # fi
 
 
 }

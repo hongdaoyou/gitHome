@@ -8,8 +8,9 @@ function fun() {
     fi
     local s=$1
     # echo $s
-    # type proxy_export
-
+    # type echo_bin_name_type.sh
+    
+    # 交互式的执行, 可以,获取, bashrc的内容. 没有export
     bash -i -c "type $s"
 }
 

@@ -1,20 +1,20 @@
 #!/bin/bash
 
-# set -x
-# 创建,模块
+
 function fun() {
     # if [ $# -lt 1 ];then
     #     echo "请输入,参数"; exit 1;
     # fi
+    local file=${1:-~/1}
 
-    local mod=${1:-hdy}
+    while read -r a; do
+        echo $a
 
-    # go mod init d1
+    done < $file
 
-    go mod init $mod
-
+    
 }
 
 
-fun "$@"
+fun $@
 
