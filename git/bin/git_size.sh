@@ -10,9 +10,9 @@ function fun() {
 
     # curl -s https://api.github.com/repos/open-webui/open-webui | jq .size
     local num=$(curl -s https://api.github.com/repos/$name | jq .size )
-
-    local MbNum=$(echo "scale=2; $num / 10" | bc )
-    echo $MbNum "Kb"
+    # echo $num
+    local MbNum=$(echo "scale=2; $num / 1024" | bc )
+    echo $MbNum "Mb"
 }
 
 

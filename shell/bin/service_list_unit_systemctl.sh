@@ -8,11 +8,11 @@ function fun() {
 
     local service=$1
 
-    if [ -z "$service" ];then
-        # 列出,所有的
-        systemctl --state=running 
-        exit
-    fi
+    # if [ -z "$service" ];then
+    #     # 列出,所有的
+    #     systemctl --state=running 
+    #     exit
+    # fi
 
     # 为了,获取,其全称的名字
     local s1=$(systemctl -t service | grep -i "$service" )
