@@ -10,7 +10,7 @@ function fun() {
     local version=${2:-1}
     echo $version
 
-    set -x
+    # set -x
     git show @~$version:$file
 
     # git show @~2:疑问3

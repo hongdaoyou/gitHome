@@ -15,6 +15,8 @@ function fun() {
         echo "正在,创建,容器";
         sudo docker run -it --name $containerName  $imageName
     else
+        sudo docker start $containerName
+
         echo ;
         # 检查,容器,是否存活. 如果是,就进入. 否则,开启,这个容器
         # if [ ]; then

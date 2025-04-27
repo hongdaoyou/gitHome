@@ -3,20 +3,16 @@
 # set -x
 # 
 function fun() {
-    if [ $# -lt 1 ];then
+    if [ $# -lt 2 ];then
         echo "请输入,参数"; exit 1;
     fi
 
     local url=$1
-    local output=$2
+    local proxy=$2 # 代理地址
 
-    # 参数
-    if [ -n "$output" ];then
-        output=" -o $output "
-    fi
-
-    # 下载
-    curl -k $url $output 2>/dev/null
+    # set -x
+    curl --proxy $proxy $url
+    # curl --proxy 127.0.0.1:3128 https://www.baidu.com
     if [ $? -eq 0 ];then
         echo "下载成功";
     else

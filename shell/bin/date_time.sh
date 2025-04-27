@@ -19,7 +19,7 @@ function fun() {
         defaultFormat="$format"
     fi
     # date +"%Y-%m-%d %H:%M:%S"
-    set -x
+    # set -x
     date $s1  +"$defaultFormat"
 }
 

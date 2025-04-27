@@ -1,26 +1,25 @@
 #!/bin/bash
 
 
-function redis_info() {
+function fun() {
     # 获取, 存储的目录
-    redis-cli.sh  config get dbfilename
+    redis_cli.sh  config get dbfilename
     echo "";
 
-    redis-cli.sh  config get logfile
+    redis_cli.sh  config get logfile
     echo "";
     
-    redis-cli.sh  config get save
+    redis_cli.sh  config get save
     echo "";
 
-    redis-cli.sh  config get maxclients
+    redis_cli.sh  config get maxclients
     echo "";
 
     echo "有多少键:"
-    redis-cli.sh  dbsize 
+    redis_cli.sh  dbsize 
     echo "";
 
 }
 
-
-redis_info
+fun
 

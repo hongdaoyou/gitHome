@@ -16,7 +16,7 @@ function fun() {
         dst=" -d $dst "
     fi
 
-    set -x
+    # set -x
     unzip -O CP936 $zipFile $dst
 
 }

@@ -23,7 +23,7 @@ function fun() {
     # 发送完,立马,就结束
     local optStr=" -z ";
 
-    set -x
+    # set -x
     echo "$msg\n" | nc $optStr -u $ip $port
 
 }

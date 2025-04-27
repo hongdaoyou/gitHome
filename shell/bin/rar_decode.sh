@@ -16,7 +16,7 @@ function fun() {
         dst=" -d $dst "
     fi
 
-    set -x
+    # set -x
     rar x $zipFile -o+ $dst
 
 }

@@ -6,9 +6,17 @@ function fun() {
     # if [ $# -lt 1 ];then
     #     echo "请输入,参数"; exit 1;
     # fi
-    local s=$1
+    local port=$1
 
-    sudo ss -lntup  | awk '{print $5}' | grep -v Local | awk -F':' '{print $NF}' |  sort -u
+    local ret=$(sudo ss -lntup  | awk '{print $5}' | grep -v Local | awk -F':' '{print $NF}' |  sort -u )
+
+    # local ret1=$(sudo ss -lnp | grep -v -E "u_str|u_seq"| tr -s ' ') 
+    if [ -n "$port" ];then
+        echo "$ret" | grep $port
+    else
+        echo "$ret"
+    fi
+    
 }
 
 
