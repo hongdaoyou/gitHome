@@ -11,7 +11,7 @@ function fun() {
 export gitHome=$gitHome
 
 # 将shell路径,加载进去
-source ${gitHome}/shell/load_shell_path.sh
+source ${gitHome}/shell/load_shell_bin_path.sh
 
 """
     echo "$s1"
