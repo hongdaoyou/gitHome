@@ -11,9 +11,11 @@ function fun() {
     local name=$1
     local url=$2
 
-    git remote "$@"
-    if [ $# -eq 1 ];then
-        git remote "$@" | grep "name"
+    # git remote "$@"
+    if [ $# -eq 0 ];then
+        git remote -v
+    elif [ $# -eq 1 ];then
+        # git remote "$@" | grep "name"
         git remote get-url $name
 
     elif [ $# -eq 2 ];then
