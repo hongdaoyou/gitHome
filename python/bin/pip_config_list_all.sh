@@ -1,15 +1,14 @@
 #!/bin/bash
 
 # set -x
-# 查看,某次提交的文件
+# 获取,某个配置
 function fun() {
     # if [ $# -lt 1 ];then
     #     echo "请输入,参数"; exit 1;
     # fi
-    local url=${1:-0}
+    local s=$1
 
-    # set -x
-    git show @~$url --name-status
+    pip config list 
 
 }
 

@@ -8,7 +8,12 @@ function fun() {
     fi
     local url=$1
 
-    wget  https://ghgo.xyz/$url
+    # 导入代理
+    proxy_export
+    wget $url
+    # wget  https://ghgo.xyz/$url
+
+    proxy_del
 }
 
 fun "$@"

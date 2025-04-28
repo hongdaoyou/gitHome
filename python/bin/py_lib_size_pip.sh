@@ -10,7 +10,9 @@ function fun() {
     
     # du -sh /home/hdy/.local/lib/python3.8/site-packages/langchain
     
-    du -sh /home/hdy/.local/lib/python3.8/site-packages/$soft
+    # du -sh /home/hdy/.local/lib/python3.8/site-packages/$soft
+    du -sh /usr/lib/python3/dist-packages/$soft
+
 }
 
 
