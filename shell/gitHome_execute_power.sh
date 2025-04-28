@@ -14,11 +14,13 @@ function fun() {
         # echo $key
         # echo ${demoFileArr[$key]}/bin/*.sh
 
+        shopt -s nullglob
         for file in  ${demoFileArr[$key]}/bin/*\.sh; do
             # echo $file
             # echo '' > /dev/null
             chmod +x $file
         done
+        shopt -u nullglob
         
         shopt -s nullglob  # 如果没有匹配的文件，返回空列表而不是原始模式
         for file in ${demoFileArr[$key]}/*\.sh; do
