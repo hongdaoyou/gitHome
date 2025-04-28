@@ -8,6 +8,10 @@ function fun() {
     # fi
     local s=$1
 
+    # 赋予 noteDir的 执行权限
+    chmod +x $noteDir/0-wen/0-batch/{shell,系统脚本,系统配置}/*.sh
+
+
     source $gitHome/shell/common.sh;
 
     for key in ${!demoFileArr[@]}; do
@@ -33,6 +37,7 @@ function fun() {
 
     done
 
+    
 }
 
 
