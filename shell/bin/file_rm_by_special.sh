@@ -7,7 +7,7 @@ function rm_file_by_special() {
     fi
 
     local fileName=$1
-    local fileArr=$(find . -name "*$fileName*" )
+    local fileArr=$(find . -iname "*$fileName*" )
 
     local confirm=$2;
     if [ -n "$confirm" ] && [ "$confirm" -eq 1 ]; then

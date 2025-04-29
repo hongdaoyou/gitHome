@@ -8,8 +8,10 @@ function fun() {
     # fi
     local file=$1
 
-    git restore --staged $file
+    # 默认,从暂存库中,下载
+    git restore -s HEAD  $file
 
+    # git checkout -- $file
 
 }
 

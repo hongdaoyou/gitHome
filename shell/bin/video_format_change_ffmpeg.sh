@@ -3,11 +3,16 @@
 # set -x
 # 
 function fun() {
-    if [ $# -lt 1 ];then
+    if [ $# -lt 2 ];then
         echo "请输入,参数"; exit 1;
     fi
-    # 回退提交的
-    git commit --amend
+
+    local src=$1
+    local dst=$2
+
+
+    ffmpeg -i $src $dst
+
 }
 
 

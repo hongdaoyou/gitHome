@@ -21,6 +21,7 @@ function connect_db() {
     # fi
 
     # echo $3;
+    # echo 'aaa'
     # 没有参数
     if [  $# -eq 0 ]; then
         # echo "11"
@@ -33,5 +34,5 @@ function connect_db() {
     fi
 }
 
-connect_db "$*"
+connect_db "$@"
 

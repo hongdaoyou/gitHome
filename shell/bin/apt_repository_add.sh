@@ -8,7 +8,7 @@ function fun() {
     # fi
     local s=$1
 
-    add-apt-repository -r $s
+    sudo add-apt-repository  $s
 }
 
 

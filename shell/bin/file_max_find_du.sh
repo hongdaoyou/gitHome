@@ -115,6 +115,7 @@ function find_max_file() {
     fi
 
     local dirName=$1;
+    local num=${2:-30};
 
     # if [ $# -eq 0 ];then
     #     dirName="/";
@@ -123,7 +124,8 @@ function find_max_file() {
         dirName=$(pwd)
     fi
 
-    find_max_file_real ${dirName} 0 | sort -nr | awk '{ print $1/1024/1024, "Gb", $2,$3,$4 }' | head -30 
+    # echo $num;
+    find_max_file_real ${dirName} 0 | sort -nr | awk '{ print $1/1024, "Mb", $2,$3,$4 }' | head -$num 
     # find_max_file_real ${dirName} 0  >> 1
 
     # cat ~/1
@@ -135,7 +137,7 @@ fileName=$1
 if [ -d "$fileName" ]; then
     fileName="$fileName"/
 fi
-find_max_file $fileName
+find_max_file $fileName $2
 
 t2=$(date +"%s")
 

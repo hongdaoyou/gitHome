@@ -1,17 +1,18 @@
 #!/bin/bash
 
 # set -x
-# 删除,提交到,暂存库的文件
+# 修改备注
 function fun() {
     # if [ $# -lt 1 ];then
     #     echo "请输入,参数"; exit 1;
     # fi
-    
-    local fileName="$@"
 
-    cd $(dirname $fileName)
+    # 回退提交的 .暂存区,清除掉
+    # git reset HEAD~1
 
-    git rm --cache $fileName
+    git reset --soft HEAD~1
+
+
 }
 
 

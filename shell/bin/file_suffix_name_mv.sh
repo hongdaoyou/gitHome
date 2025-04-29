@@ -12,6 +12,7 @@ function fun() {
 
         for file in *;do
             # echo $file;
+            # 没有后缀名 .
             if [[ -f "$file" &&  ! "$file" =~ \.  ]]; then
                 mv $file $file.$dst
                 # echo $file;

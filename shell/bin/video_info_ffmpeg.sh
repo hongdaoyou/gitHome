@@ -8,15 +8,17 @@ function fun() {
     fi
 
     local file=$1
-    local dst=$2
+    # local dst=$2
 
-    # ffmpeg -i demo.mp4
-    if [ $# -eq 1 ];then
-        ffmpeg -i $file
-    elif [ $# -eq 2 ];then
-        ffmpeg -i $file $dst
+    ffmpeg -i $file
 
-    fi
+    # # ffmpeg -i demo.mp4
+    # if [ $# -eq 1 ];then
+    #     ffmpeg -i $file
+    # elif [ $# -eq 2 ];then
+    #     ffmpeg -i $file $dst
+
+    # fi
 
 }
 

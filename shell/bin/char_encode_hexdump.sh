@@ -7,8 +7,10 @@ function fun() {
         echo "请输入,参数"; exit 1;
     fi
 
-    local type=$1
-    local file=$2
+    local file=$1
+
+    # 字符编码的格式 : x, b, o
+    local type=${2:-x} 
 
     hexdump -${type} $file
 }

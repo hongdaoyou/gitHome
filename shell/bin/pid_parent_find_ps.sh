@@ -19,7 +19,7 @@ done
 # 查找,它的子进程
 function find_child() {
     # ppid=$(ps -o pid -ppid $pid)
-    $(pgrep -P $firstPid  | xargs -r ps -p)
+    pgrep -P $firstPid  | xargs -r ps -p
 }
 
 find_child
