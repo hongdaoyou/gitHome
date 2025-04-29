@@ -8,10 +8,10 @@ function fun() {
 
     local service=$1
 
-    if [ -z "$service" ];then
-        systemctl --state=running
-        exit
-    fi
+    # if [ -z "$service" ];then
+    #     systemctl --state=running
+    #     exit
+    # fi
 
     local s1=$(systemctl -t service | grep "$service" )
     if [ -z "$s1" ];then

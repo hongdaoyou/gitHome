@@ -11,6 +11,12 @@ function fun() {
     local start=$2;
     local end=$3;
 
+    local db=$4;
+
+    local db_opt='';
+    if [ -n $db ];then
+        db_opt=" -d $db "
+    fi
 
     # 查看,最近的一个二进制日志的位置
     # mysql_connect_db.sh SHOW BINARY LOGS | grep -v -E '\+|Log_name' | sort -r
@@ -18,7 +24,7 @@ function fun() {
 
     set -x
     # mysqlbinlog --start-datetime="$start 00:00:00" --stop-datetime="$end 00:00:00" -d ${dbName} ${logName} | grep $cmd
-    sudo mysqlbinlog --start-datetime="$start 00:00:00" --stop-datetime="$end 00:00:00"  /var/lib/mysql/${logName} | grep -i $cmd
+    sudo mysqlbinlog $db_opt --start-datetime="$start 00:00:00" --stop-datetime="$end 00:00:00"  /var/lib/mysql/${logName} | grep -i $cmd
 
 }
 

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # set -x
-# 
+# 废弃
 function fun() {
     if [ $# -lt 1 ];then
         echo "请输入,参数"; exit 1;

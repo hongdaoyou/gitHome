@@ -7,7 +7,7 @@ function fun() {
     local fileName='';
     local file='';
     # echo $1
-    local flag=${2};
+    local flag=${2}; # 方向
 
 
     # 默认的文件名

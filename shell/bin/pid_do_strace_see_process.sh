@@ -3,7 +3,7 @@
 
 # 查找,最繁忙的进程,正在做什么
 
-function see_process_doing() {
+function fun() {
     local pid;
 
     #没有输入内容
@@ -31,5 +31,5 @@ function see_process_doing() {
 
 }
 
-see_process_doing $1
+fun $1
 

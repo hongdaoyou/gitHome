@@ -10,6 +10,7 @@ function fun() {
     # yarn global add create-vite
     create-vite $proj
 
+    cd $proj
 	yarn install
 
     # yarn dev
