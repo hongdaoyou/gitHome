@@ -26,7 +26,7 @@ function fun() {
         echo "没找到"
     fi
 
-    # echo "$s1";
+    echo "$s1";
 
 }
 
