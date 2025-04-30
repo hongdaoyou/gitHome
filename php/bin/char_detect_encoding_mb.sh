@@ -8,7 +8,7 @@ function fun() {
     fi
     local s=$1
     
-    php /home/hdy/data/gitHome/php/char_detect_encoding_mb.php $s
+    php  $gitHome/php/char_detect_encoding_mb.php $s
 
 }
 

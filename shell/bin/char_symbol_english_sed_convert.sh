@@ -12,7 +12,7 @@ function fun() {
 
     # 默认的文件名
     if [[  $# -eq 0  ]];then
-        fileName=~/data/note/疑问3
+        fileName=$noteDir/疑问3
     elif [[ "$1" =~ ^tmp ]];then  # tmp开头的
         file="$1"
     else

@@ -11,13 +11,13 @@ function fun() {
     if [ $# -eq 0 ];then
         # echo "编码"
         # base64,编码
-        # base64 -w0 ~/data/note/0-wen/0-tmp/tmp5 >  1
+        # base64 -w0 $noteDir/0-wen/0-tmp/tmp5 >  1
         echo "$s1" | base64 -w0 
 
     else
         # echo "解码"
         # 解码
-        # base64 -d ~/data/note/0-wen/0-tmp/tmp5 >  1
+        # base64 -d $noteDir/0-wen/0-tmp/tmp5 >  1
         echo "$s1" | base64 -d
     fi
 }

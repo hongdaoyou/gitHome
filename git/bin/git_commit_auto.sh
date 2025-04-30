@@ -4,7 +4,7 @@
 
 # 默认,提交到 gitHome. 否则,提交到,指定的目录
 if [ $# -eq 0 ];then
-    cd ~/data/gitHome
+    cd $gitHome
 else
     cd ${1} 2>/dev/null || (echo "目录,不存在" && exit 1 );
 fi

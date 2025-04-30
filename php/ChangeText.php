@@ -1,8 +1,6 @@
 <?php
 
 
-// $filePath="/home/hdy/data/note/0-wen/0-tmp/tmp3"; # 使用默认路径
-
 // echo ;
 $obj = new ChangeText();
 $obj->parse_user_input($argc, $argv);
@@ -30,7 +28,7 @@ class ChangeText {
 
     // 改变,英文句子的内容
     public function change_english_sentence() {
-        $filePath="/home/hdy/data/note/0-wen/0-tmp/tmp4"; # 使用默认路径
+        $filePath=getenv('noteDir') . "/0-wen/0-tmp/tmp4"; # 使用默认路径
 
         $str = file_get_contents($filePath);
 
