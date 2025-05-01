@@ -13,6 +13,11 @@ function fun() {
     fi
 
     du -sh $file
+    echo $(du -sb $file | cut -f 1 )" 字节数"
+    # echo $(du -sk $file | cut -f 1 )" KB"
+    # echo $(du -sm $file | cut -f 1 )" MB"
+    # echo $(du -sg $file | cut -f 1 )" GB"
+
 }
 
 fun "$@"
