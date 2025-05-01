@@ -1,0 +1,54 @@
+# 不上传的文件
+1
+2
+3
+a.out
+s
+a1
+a2
+b1
+s1
+c
+c1
+
+a.file
+b.file
+c.file
+
+compopser.lock
+composer.lock
+yarn.lock
+
+# java,编译的
+*.class
+
+#############
+
+##### 不上传的目录
+
+# 我的测试目录
+d1/
+d2/
+
+# vue的软件包
+node_modules/
+
+# vue 的发布
+dist/
+
+.git/
+.svn/
+.history/
+
+# php-composer 下载的
+vendor/
+
+# go的包目录
+pkg/
+
+# python 的包目录
+site-packages/
+
+
+pma/
+wordpress/
