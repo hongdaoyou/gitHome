@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+          #d1 {
+            border: 1px solid red;
+            width: 100px;
+            height: 200px;
+        } 
+
+        /* 绝对定位 */
+        #d1 {
+            position:absolute; 
+            top:50%;
+            left:50%;
+            /* dds */
+            transform: translate(-50%, -50%); 
+        }
+
+
+        /* flex 居中 */
+
+        /* body {
+            display:flex;
+            justify-content:center;
+            align-items:center;
+
+            height: 100vh; 
+            margin:0px;
+        }  */
+
+        /* grid 居中  */
+        /* body {
+            display: grid;
+            justify-content:center;
+            align-content:center;
+
+            height: 100vh; 
+            margin:0px;
+        } */
+        /* justify-items:center;
+        align-items:center; */
+
+    </style>
+    
+</head>
+<body>
+    
+    <div id="d1">
+        1111
+    </div>
+
+</body>
+
+<script type="text/javascript">
+
+// var obj = document.querySelector("a"); // 返回第一个元素
+// obj.onchange = function (event) {
+//     console.log(this.value); // this,也指向,当前的元素
+
+//     console.log(event.target.value );
+// }
+
+
+class Test {
+    fun() {
+        console.log();
+    }
+}
+
+var obj = new Test();
+obj.fun();
+
+</script>
+
+</html>
