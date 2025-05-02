@@ -6,8 +6,14 @@ function fun() {
     if [ $# -lt 1 ];then
         echo "请输入,文件名"; exit 1;
     fi
+
     local fileName=$1
+
     # fileName='/home/hdy/data/note/0-wen/0-tmp/tmp6'
+
+    if [[ "$1" =~ ^[1-9]+$ ]];then  # tmp开头的
+        fileName=$noteDir/0-wen/0-tmp/tmp"$1"
+    fi
 
     # local s1=$(cat $fileName)
 
@@ -17,6 +23,8 @@ BEGIN {
     ii=1; # 总共,多少个字段
 }
 {
+    # 清除,最开头的空格
+    sub(/^[ \t]+/, "");
     # print NF
     for (i=1; i<=NF;i++) {
         # 下表累加. 统计数组
@@ -48,7 +56,7 @@ END {
 
         retStr="";
         if (colNum >= 1) {
-            # 以 每一行的 作为开头. 那么,就不可能重复啊
+            # 以 每一行的 作为开头. 
             kk = sprintf("%d0", k++);
         }
         # print k
@@ -57,7 +65,7 @@ END {
             val = valueArr[j++];
             
             # 如果, 出现的个数,大于1
-            if (countArr[val] > 1 ) {
+            if (countArr[val] > 1 && index(val, "V_") != 1 ) {
                 # retStr= retStr j"["  val  "]";
                 retStr= sprintf("%s%s[%s]", retStr, kk++, val);
 

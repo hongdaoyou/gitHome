@@ -8,7 +8,7 @@ function fun() {
     # fi
     # local s=$1
 
-    python3 $gitHome/python/sin_image.py
+    python3 $gitHome/python/ln_image.py
 }
 
 
