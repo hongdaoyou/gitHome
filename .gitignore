@@ -15,6 +15,23 @@ a.file
 b.file
 c.file
 
+# 编译的 二进制文件
+.o
+.obj
+
+.exe
+.out
+.bin
+
+.a
+.lib
+.so
+.dll
+.log
+.tmp
+.swp
+
+
 compopser.lock
 composer.lock
 yarn.lock
