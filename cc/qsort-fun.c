@@ -3,7 +3,7 @@
 
 // 比较
 int compare(const void *a, const void *b) {
-    return *(int *)a - *(int *)b;
+    return *(int *)a - *(int *)b;  // a>b 升序
     // return  *(int *)b - *(int *)a ;
 }
 
