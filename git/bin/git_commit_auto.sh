@@ -34,7 +34,7 @@ fi
 git add .
 
 # 去除掉,二进制文件. 不提交
-git diff --cached --name-only | xargs file | grep -E "ELF|Mach-O" | cut -d: -f1 | xargs git reset --
+git diff --cached --name-only | xargs -r file | grep -E "ELF|Mach-O" | cut -d: -f1 | xargs -r git reset --
 
 # echo -e "aaaaaaa222\n";
 

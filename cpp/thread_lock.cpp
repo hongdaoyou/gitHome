@@ -29,13 +29,14 @@ int main() {
     mutex lock;
     
     // 线程的个数
-    int size = 1;
+    int size = 3;
     
     // 创建,线程数组
     thread thArr[size];
 	
 	// 执行,线程函数
     for (int i=0; i < size; i++) {
+        # 传递,引用
         thArr[i] = thread(fun, ref(a), ref(lock));
     }
     // 等待

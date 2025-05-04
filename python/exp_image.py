@@ -4,7 +4,7 @@ import math
 import matplotlib.pyplot as plt
 import numpy as np
 
-
+# 指数函数的 图像
 
 class Test:
     def fun(self):
