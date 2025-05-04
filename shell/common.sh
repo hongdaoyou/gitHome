@@ -124,7 +124,10 @@ excludeDir=(
 )
 
 # 通用的shell 路径
-binPathArr=(
+BinPathArr=(
+    $noteDir/0-wen/0-batch/shell
+    $noteDir/0-wen/0-batch/系统配置
+
     $gitHome/shell
     $gitHome/shell/bin
 
@@ -138,7 +141,7 @@ binPathArr=(
     $gitHome/redis/bin
     $gitHome/mysql/bin
 
-    $gitHome/c/bin
+    $gitHome/cc/bin
     $gitHome/python/bin
 
     $gitHome/cpp/bin
