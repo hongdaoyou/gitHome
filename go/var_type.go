@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"reflect"
-
 )
 
 // 获取,变量的类型
@@ -25,18 +24,18 @@ func fun() {
 
 	// b,ok := interface{}(a).(int)
 	// fmt.Println(ok)
-	
+
 	// fmt.Println(a)
 }
 func fun1() {
-	a:=20
+	a := 20
 
 	d := interface{}(29)
 
 	// d= 30
 	fmt.Println(d, fmt.Sprintf("%T", d))
 
-	// b := 
+	// b :=
 	b := reflect.TypeOf(a)
 	c := reflect.TypeOf(a).Kind()
 	// fmt.Println(b == reflect)
@@ -47,9 +46,9 @@ func fun1() {
 
 	// d := b.PkgPath()
 	// d := b.NumField()
-	
+
 	// fmt.Println(d)
-	
+
 	// switch reflect.TypeOf(a).Kind() {
 	// case reflect.Int:
 	// 	fmt.Println("int type")
@@ -58,16 +57,14 @@ func fun1() {
 	// default:
 	// 	fmt.Println("other")
 	// }
-	
+
 }
+
 // fmt.Println(b)
-
-
 
 func main() {
 	// fun()
 	fun1()
-	
+
 	fmt.Println("")
 }
-

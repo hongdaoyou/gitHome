@@ -1,3 +1,26 @@
+set $cors "";
+if ($http_origin ~* (https://example.com|https://app.example.com|127.0.0.1|localhost(:[0-9]+)?)) {
+    set $cors "true";
+}
+
+# 只在跨域时添加头
+if ($cors = "true") {
+    add_header 'Access-Control-Allow-Origin' "$http_origin";
+    add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS, PUT, DELETE';
+    add_header 'Access-Control-Allow-Headers' 'Content-Type, Authorization, X-Requested-With';
+    add_header 'Access-Control-Allow-Credentials' 'true';
+    add_header 'Access-Control-Max-Age' 1728000;
+}
+
+# 处理预检请求
+if ($request_method = 'OPTIONS') {
+    add_header 'Content-Type' 'text/plain; charset=utf-8';
+    add_header 'Content-Length' 0;
+    return 204;
+}
+
+_____
+
 
 # 如果 预检请求,就允许. 并且, 并且,设置,各种允许, header
 # if ( $request_method )

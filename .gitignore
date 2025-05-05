@@ -69,3 +69,7 @@ site-packages/
 
 pma/
 wordpress/
+
+python的缓存
+__pycache__/
+

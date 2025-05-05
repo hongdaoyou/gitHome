@@ -15,3 +15,4 @@ class Test:
 
 
 Test().fun()
+

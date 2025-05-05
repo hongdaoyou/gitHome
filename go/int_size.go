@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"unsafe"
-
 )
 
 func fun() {
@@ -11,12 +10,11 @@ func fun() {
 
 	b := 0
 
-	fmt.Println(unsafe.Sizeof(a),unsafe.Sizeof(b))
+	fmt.Println(unsafe.Sizeof(a), unsafe.Sizeof(b))
 }
 
 func main() {
 	fun()
-	
+
 	fmt.Printf("")
 }
-

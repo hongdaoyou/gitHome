@@ -3,7 +3,7 @@
     "tasks": [
         {
             "type": "cppbuild",
-            "label": "C/C++: gcc 生成活动文件",
+            "label": "C/C++: gcc 生成活动文件1",
             "command": "/usr/bin/gcc",
             "args": [
                 "-fdiagnostics-color=always",
@@ -26,7 +26,7 @@
         },
         {
             "type": "cppbuild",
-            "label": "C/C++: g++ 生成活动文件",
+            "label": "C/C++: g++ 生成活动文件2",
             "command": "/usr/bin/g++",
             "args": [
                 "-fdiagnostics-color=always",
@@ -41,7 +41,6 @@
             "problemMatcher": [
                 "$gcc"
             ],
-            // "group": "build",
             "group": {
                 "kind": "build",
                 "isDefault": true
@@ -50,7 +49,7 @@
         },
         {
             "type": "cppbuild",
-            "label": "C/C++: g++-13 生成活动文件",
+            "label": "C/C++: g++-13 生成活动文件3",
             "command": "/usr/bin/g++-13",
             "args": [
                 "-fdiagnostics-color=always",

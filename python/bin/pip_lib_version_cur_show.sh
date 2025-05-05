@@ -8,7 +8,7 @@ function fun() {
     fi
     local soft=$1
 
-    pip3 show $soft
+    sudo pip3 show $soft
 }
 
 
