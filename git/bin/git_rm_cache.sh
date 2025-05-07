@@ -11,6 +11,10 @@ function fun() {
 
     cd $(dirname $fileName)
 
+    # if [ -f "$fileName" ];else
+    #     rm -rf $fileName
+    # fi
+
     git rm --cache $fileName
 }
 
