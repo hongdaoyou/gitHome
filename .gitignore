@@ -70,6 +70,10 @@ site-packages/
 pma/
 wordpress/
 
-python的缓存
+# python的缓存
 __pycache__/
+
+
+vscode-typescript1000
+node-compile-cache
 

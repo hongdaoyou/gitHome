@@ -126,7 +126,6 @@ excludeDir=(
 # 通用的shell 路径
 BinPathArr=(
     $noteDir/0-wen/0-batch/shell
-    $noteDir/0-wen/0-batch/系统配置
 
     $gitHome/shell
     $gitHome/shell/bin
