@@ -1,17 +1,14 @@
 #!/bin/bash
 
 # set -x
-# 列出,yarn 的配置
+# 获取,设置,npm的配置 | 未测试
 function fun() {
     # if [ $# -lt 1 ];then
     #     echo "请输入,参数"; exit 1;
     # fi
-    # local s=$1
+    url=${1:-https://registry.npmmirror.com}
+    npm config set $url 
 
-    yarn config list
-
-    # 详细的 默认值
-    # yarn config list --verbose
 
 }
 

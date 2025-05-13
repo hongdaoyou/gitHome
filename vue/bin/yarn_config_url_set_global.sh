@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -x
+# set -x
 # 
 function fun() {
     # if [ $# -lt 1 ];then
@@ -12,8 +12,8 @@ function fun() {
     #     globalStr="-g"
     # fi
 
-    yarn config set registry https://registry.npm.taobao.org/
-    # yarn config set registry https://registry.npmmirror.com
+    # yarn config set registry https://registry.npm.taobao.org/  # 被废弃了
+    yarn config set registry https://registry.npmmirror.com
 
 }
 
