@@ -6,10 +6,14 @@
     
     <style>
       body {
-        width:100px;
-        height:200px;
+        width:200px;
+        height:400px;
 
       }
+
+    #showId {
+        margin-top:20px
+    }
     </style>
   </head>
 
@@ -17,7 +21,20 @@
     
     <div>广告,清除</div>
 
+    <div>
+        <input id="inputLawId" value=""/>
+        <button id="searchId">获取,规则</button>
+        <br />
+        <button id="insertId">添加</button>
+        <button id="deleteId">删除</button>
+    </div>
+
+    <div id="showId"  >
+        未获取
+    </div>
+
     <script src="popup.js"></script>
+    <!-- <script src="../build/popup.js"></script> -->
 
   </body>
 </html>

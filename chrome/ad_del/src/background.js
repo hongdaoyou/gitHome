@@ -7,7 +7,7 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
     // console.log(tab.url  + 'fff');
     
     // 正在加载
-    if (changeInfo.status === 'loading' && tab.url) {
+    if (changeInfo.status === 'loading' && tab && tab.url) {
     // if (changeInfo.status === 'complete' && tab.url) {
     // if (changeInfo.status === 'complete' && tab.url && tab.url.includes('localhost')) {
     
@@ -18,3 +18,5 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
       });
     }
   });
+
+  
