@@ -14,7 +14,7 @@
     "default_popup": "popup.html"
   },
   "permissions": [
-    "activeTab", "scripting", "storage"
+    "activeTab", "scripting", "storage", "notifications"
   ],
   "host_permissions": ["<all_urls>"] 
 }

@@ -11,6 +11,13 @@ document.getElementById('searchId').addEventListener('click', () => {
 });
 
 function get_law () {
+    // chrome.notifications.create({
+    //     type: 'basic',
+    //     iconUrl: 'icons/icon_32.png',
+    //     title: '提示',
+    //     message: '来自后台的消息'
+    //     });
+    // return;
     chrome.storage.local.get(["delLaw"])
         .then(result => {
             console.log(result.delLaw);

@@ -6,7 +6,6 @@ class Test {
     public function fun() {
         // global $summaryOutputDir;
 
-  
 
     }
 }
