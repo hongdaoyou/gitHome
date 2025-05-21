@@ -6,7 +6,7 @@ function fun() {
     if [ $# -lt 1 ];then
         echo "请输入,参数"; exit 1;
     fi
-    local content=$1
+    local content="$@"
 
     # 1. 激活 Chrome 窗口
     xdotool search --name "Google Chrome" windowactivate
