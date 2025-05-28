@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <!-- <link rel='stylesheet' type='text/css' media='screen' href='main.css'> -->
+    <!-- <script src='main.js'></script> -->
+</head>
+<body>
+    <!-- <div style="white-space: pre-line;"> -->
+    
+    <pre id="d1">
+        aaa bb  333
+        ddd  sss d
+        11122d
+        I  like you 
+        ew
+        sd
+        
+    </pre>
+</body>
+<script>
+    const d1 = document.getElementById('d1');
+
+    const s1 = d1.innerText;
+    // console.log(s1);
+
+    const arr1 = s1.split('\n');
+    const arr2 = [];
+
+    // foreach,不是,直接返回的
+    arr1.forEach(ele => {
+        arr2.push( "<div style='margin:15px'>" + ele + "</div>");
+    });
+    // console.log(arr2);
+
+    s2 = arr2.join("\n");
+    
+    // 外部的,没有完全替换掉
+    // d1.innerHTML = "<div>" + s2 + "</div>";
+    
+    // 不能直接替换. 是文本
+    // d1.replaceWith('<div>替换后的 HTML 内容</div>');
+    
+    // 
+
+    // 新建,元素. 然后,replace
+    // const newNode = document.createElement('div')
+    // newNode.innerHTML = "<div>" + s2 + "</div>";
+    // d1.replaceWith(newNode);
+
+    d1.outerHTML = "<div>" + s2 + "</div>";
+
+
+    // console.log(a1);
+</script>
+
+</html>

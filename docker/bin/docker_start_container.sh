@@ -8,7 +8,7 @@ function fun() {
     fi
     local name=$1
 
-    docker start $name
+    sudo docker start $name
 
 }
 

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+    </style>
+    
+</head>
+<body>
+    
+    <ul id="u1">
+        <li id="i1">111</li>
+        <li id="i2">22</li>
+        <li id="i3">33</li>
+        <li id="i4">444</li>
+    </ul>
+    <div>
+
+    </div>
+
+</body>
+
+<script type="text/javascript">
+
+// 已知,某个元素.然后,在其插入.
+const i2 = document.getElementById('i2');
+
+const newNode = document.createElement('li');
+newNode.innerText='new..'
+
+// 找出,该元素的父元素.再插入
+i2.parentNode.insertBefore(newNode, i2);
+
+
+// 在一个元素,之前,之后,插入
+const u1 = document.getElementById('u1');
+u1.prepend('a1111');
+
+u1.append('a2222');
+
+
+</script>
+
+</html>
