@@ -9,7 +9,7 @@ function fun() {
     local s=$1
 
     # 赋予 noteDir的 执行权限
-    chmod +x $noteDir/0-wen/0-batch/{shell,系统脚本,系统配置}/*.sh
+    chmod +x $noteDir/0-wen/0-batch/shell/*.sh
 
 
     source $gitHome/shell/common.sh;
