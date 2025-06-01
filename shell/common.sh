@@ -4,7 +4,7 @@
 declare -A demoFileArr;
 demoFileArr=(
     [php]=${gitHome}/php
-    [c]=${gitHome}/c
+    [c]=${gitHome}/cc
     [cpp]=${gitHome}/cpp
 
     [vue]=${gitHome}/vue

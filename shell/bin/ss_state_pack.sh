@@ -11,7 +11,7 @@ function fun() {
     #  watch -n1  ss -t state SYN-RECV
     #  watch -n1  ss -t state close-wait
     
-    watch -n0.1  ss -tn state $pack
+    watch -n0.01  ss -tn state $pack
 }
 
 

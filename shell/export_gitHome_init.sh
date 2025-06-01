@@ -7,7 +7,7 @@ function fun() {
     local gitHome=${PWD%/*}
     # echo $gitHome;
     local s1="""
-# gitHome,路径
+# gitHome,路径  # 如果,在 my-etc-profile 设置了,就不用加了
 export gitHome=$gitHome
 
 # 将shell路径,加载进去
