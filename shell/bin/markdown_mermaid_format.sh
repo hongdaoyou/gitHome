@@ -9,8 +9,6 @@ function fun() {
 
     local fileName=$1
 
-    # fileName='/home/hdy/data/note/0-wen/0-tmp/tmp6'
-
     if [[ "$1" =~ ^[1-9]+$ ]];then  # tmp开头的
         fileName=$noteDir/0-wen/0-tmp/tmp"$1"
     fi

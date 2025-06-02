@@ -16,7 +16,7 @@ function fun() {
     
     # sudo sed -i "s/#PasswordAuthentication yes/PasswordAuthentication yes/" a.file /etc/ssh/sshd_config
     
-    sudo sed -i "s/$s1/$s2/" $file
+    sudo sed -i -e "s/$s1/$s2/" $file
 
     if [ $? -eq 0 ];then
         echo "替换成功";

@@ -16,7 +16,7 @@ function fun() {
         optStr=" | grep -v .sh"
     fi
 
-    set -x
+    # set -x
     local cmd="find $d1  -type f  -executable $optStr"
 
     eval $cmd

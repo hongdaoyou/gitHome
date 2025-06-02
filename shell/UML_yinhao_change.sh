@@ -9,7 +9,7 @@ function fun() {
     local file=$1
 
 
-    sed -i -r "s/\"([':=<\/>1-9a-zA-Z\+\\%\$\^-]+)\"/'\1'/g" $file
+    sed -i -E "s/\"([':=<\/>1-9a-zA-Z\+\\%\$\^-]+)\"/'\1'/g" $file
 
     # echo 'aaa' > $file
 # echo 'AA:'$file
