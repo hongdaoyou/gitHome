@@ -1,0 +1,36 @@
+{
+  "name": "vsc-plugin-demo",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.47.3"
+    },
+    "activationEvents": [
+        "onStartupFinished",
+        "onCommand: myExtension.runCmd"
+    ],
+    "main": "./ext.js",
+
+    "contributes": { 
+        "commands": [
+                {
+                    "command": "myExtension.runCmd",
+                    "title": "run cmd"
+                },
+                {
+                    "command": "myExtension.getCmd",
+                    "title": "get cmd"
+                }
+            ],
+            "keybindings": [
+                {
+                    "command": "myExtension.getCmd",
+                    "key": "ctrl+shift+alt+j"
+                },
+                {
+                    "command": "myExtension.runCmd",
+                    "key": "ctrl+shift+alt+k"
+                }
+            ]
+    }
+
+}
