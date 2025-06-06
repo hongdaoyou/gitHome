@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package p111;
+option go_package = ".;main";
+
+service S1 {
+  rpc fun1 (M1) returns (M2) {}
+}
+
+message M1 {
+  string m1 = 1;
+}
+
+message M2 {
+  string m2 = 1;
+}
