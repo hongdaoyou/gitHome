@@ -13,7 +13,9 @@ function json_encode() {
 
     # 如果是,文件. 就直接操作
     if [ "$1" != "." -o -f "$1" ];then
-        jq --indent ${indentVal} "." $1 
+        local s1=$(jq --indent ${indentVal} "." $1 )
+
+        echo "$s1" > $1
     else
         # echo $1 | jq --indent ${indentVal}  "."
         echo $(cat) | jq --indent ${indentVal}  "."
