@@ -9,13 +9,18 @@ function fun() {
 
     # 定义文件数组
     local fileArr=(
-        
+
     )
 
     # 定义要删除的字符串数组
     local -A replaceArr=(
         # ["^V_(.*?)\["]="V_a["
         # ["^    V_(.*?) -->"]="    V_a -->"
+
+        ["\(\)\""]="\""
+        ["\(\)\/"]="\/"
+
+
     )
     
     local file

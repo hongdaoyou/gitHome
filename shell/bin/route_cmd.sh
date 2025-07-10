@@ -10,7 +10,7 @@ function fun() {
     # route add default gw 192.168.1.199  dev a1
 
     # 网段,路由
-    # route add -net 1.2.4.0  netmask 255.255.255.0  gw 192.168.100.1 dev wlp3s0
+    # route add -net 1.2.4.0  netmask 255.255.255.0  gw 0.0.0.0 dev wlp3s0
 
 }
 

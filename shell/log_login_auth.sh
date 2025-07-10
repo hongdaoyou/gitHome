@@ -6,7 +6,9 @@ function fun() {
 
     tail -f /var/log/auth.log -n 100 | grep systemd-logind
 
-    cat /var/log/auth.log | grep 'systemd-logind' | awk '{print $1}'
+    # cat /var/log/auth.log | grep 'systemd-logind' | awk '{print $1}'
+
+    # cat /var/log/auth.log | grep -E "Lid opened|Lid closed."
 
 }
 
