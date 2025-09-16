@@ -8,7 +8,6 @@ function fun() {
     # fi
     local s=$1
 
-
 }
 
 
