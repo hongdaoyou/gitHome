@@ -1,30 +1,25 @@
 package main
 
 import (
-    "fmt"
-    "os"
-    // "log"
-
-    "reflect"
+	"fmt"
+	"log"
+	"os"
 )
 
-func fun() {
-    // time.Sleep(2 * time.Second)
-    a1 := "11"
+func fun[T string](a T) {
+	// func fun(a interface{}) {
 
-    t := reflect.TypeOf(a1).String()
+	// time.Sleep(2 * time.Second)
 
-    
-    
-    fmt.Println(t)
+	fmt.Println(a)
 
 }
 
 func main() {
-    fun()
+	fun("abc")
+	// fun(11)
 
-    fmt.Printf("")
-    // log.Fatal("")
-    os.Exit(0)
+	fmt.Printf("")
+	log.Fatal("")
+	os.Exit(0)
 }
-
