@@ -7,8 +7,9 @@ function fun() {
     #     echo "请输入,参数"; exit 1;
     # fi
     url=${1:-https://registry.npmmirror.com}
-    npm config set $url 
-
+    npm config set registry $url 
+        
+        # 默认是 https://registry.npmjs.org/
 
 }
 
