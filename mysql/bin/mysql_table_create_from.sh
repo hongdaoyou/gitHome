@@ -23,7 +23,7 @@ function fun() {
     # sql="CREATE TABLE ${dbName}.${newTableName} LIKE ${dbName}.${tableName}; INSERT INTO ${dbName}.${newTableName} SELECT * FROM ${dbName}.${tableName};"
 
     sql="CREATE TABLE $t1 LIKE $t2; INSERT INTO $t1 SELECT * FROM $t2;"
-
+    # sql="select * from d2.t22"
 
     # mysql_connect_db.sh root 123456 "$sql"
     mysql_connect_db.sh "$sql"
