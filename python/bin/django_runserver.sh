@@ -18,7 +18,7 @@ function fun() {
         echo "manage.py 文件,不存在"; exit 1;
     fi
 
-    source ~/test/python/venv1/bin/activate
+    # source ~/test/python/venv1/bin/activate
     cd $d1
     python3 manage.py runserver
 
