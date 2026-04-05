@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-function json_encode() {
+function fun() {
     
     # 简化
     if [ $# -eq 2 ];then
@@ -10,19 +10,25 @@ function json_encode() {
         indentVal=2;
     fi
     # echo $indentVal;
-
+    # echo $1;
     # 如果是,文件. 就直接操作
-    if [ "$1" != "." -o -f "$1" ];then
-        local s1=$(jq --indent ${indentVal} "." $1 )
+    if [ "$1" != "." ];then
+        if [ ! -f "$1" ];then
+            fileName=~/test/0-tmp/$1
+        else
+            fileName=$1
+        fi
+        echo $fileName;
+        local s1=$(jq --indent ${indentVal} "." $fileName )
 
-        echo "$s1" > $1
+        # local s1=$(jq --indent ${indentVal} "." $1 )
+
+        # echo $s1;
+        echo "$s1" > $fileName
     else
         # echo $1 | jq --indent ${indentVal}  "."
         echo $(cat) | jq --indent ${indentVal}  "."
     fi
 }
 
-
-json_encode $1 $2
-
-
+fun "$*"

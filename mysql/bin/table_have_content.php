@@ -30,6 +30,7 @@ $config = [
     
     // 要搜索的字段类型
     'text_field_types' => ['char', 'varchar', 'text', 'tinytext', 'mediumtext', 'longtext', 'enum', 'set'],
+    // 'text_field_types' => ['int', 'bigint'],
     
     // 要排除的表（支持通配符 *）
     'exclude_tables' => [
