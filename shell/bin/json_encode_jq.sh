@@ -13,11 +13,13 @@ function fun() {
     # echo $1;
     # 如果是,文件. 就直接操作
     if [ "$1" != "." ];then
-        if [ ! -f "$1" ];then
-            fileName=~/test/0-tmp/$1
-        else
-            fileName=$1
-        fi
+        # if [ ! -f "$1" ];then
+        #     fileName=~/test/0-tmp/$1
+        # else
+        #     fileName=$1
+        # fi
+        fileName=~/test/0-tmp/$1
+
         echo $fileName;
         local s1=$(jq --indent ${indentVal} "." $fileName )
 
